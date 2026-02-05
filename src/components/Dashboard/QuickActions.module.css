@@ -1,0 +1,71 @@
+.section {
+    margin-bottom: 32px;
+}
+
+.title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4B5563;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background: #F9FAFB;
+}
+
+.iconWrapper {
+    width: 36px;
+    height: 36px;
+    background: #F3F4F6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4B5563;
+    transition: all 0.2s;
+}
+
+.card:hover .iconWrapper {
+    background: #EEF2FF;
+    color: var(--color-primary);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.desc {
+    font-size: 0.75rem;
+    color: #6B7280;
+}

@@ -1,0 +1,267 @@
+.container {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #374151;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Unique Pricing Hero */
+.hero {
+    background: #111827;
+    color: white;
+    padding: 180px 20px 100px;
+    /* Reduced bottom padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(to right, #fff 0%, #a5b4fc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    color: #D1D5DB;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(117, 90, 226, 0.25) 0%, rgba(17, 24, 39, 0) 70%);
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    border-radius: 50%;
+}
+
+/* Pricing Grid (Reused/Adapted) */
+.pricingSection {
+    padding: 80px 20px 120px;
+    background: #F9FAFB;
+    flex: 1;
+    /* Push footer down */
+}
+
+.pricingGrid {
+    max-width: 1200px;
+    margin: -80px auto 0;
+    /* Overlap hero slightly */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+    z-index: 3;
+}
+
+.pricingCard {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+    border: 1px solid #F3F4F6;
+}
+
+.pricingCard:hover {
+    transform: translateY(-8px);
+}
+
+.popularCard {
+    position: relative;
+    border: 2px solid #755AE2;
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(117, 90, 226, 0.15);
+    z-index: 2;
+}
+
+.popularCard:hover {
+    transform: scale(1.05) translateY(-8px);
+}
+
+.popularBadge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #755AE2;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.pricingHeader {
+    margin-bottom: 24px;
+}
+
+.pricingHeader h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.pricingDesc {
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.pricingPrice {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.priceAmount {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111827;
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.priceLabel {
+    color: #6B7280;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pricingFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    flex: 1;
+}
+
+.pricingFeatures li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #4B5563;
+    font-size: 0.95rem;
+}
+
+.pricingFeatures li svg {
+    color: #755AE2;
+    flex-shrink: 0;
+}
+
+.pricingBtn {
+    display: block;
+    text-align: center;
+    padding: 14px 24px;
+    background: #F3F4F6;
+    color: #111827;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.pricingBtn:hover {
+    background: #E5E7EB;
+}
+
+.pricingBtnPrimary {
+    display: block;
+    text-align: center;
+    padding: 14px 24px;
+    background: #755AE2;
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.pricingBtnPrimary:hover {
+    background: #644BC5;
+}
+
+/* FAQ Section */
+.faqSection {
+    padding: 100px 20px;
+    background: white;
+}
+
+.faqContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faqHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.faqHeader h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.faqItem {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.faqItem h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.faqItem p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+    .pricingGrid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-top: -40px;
+    }
+
+    .popularCard {
+        transform: none;
+    }
+
+    .popularCard:hover {
+        transform: translateY(-8px);
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,52 @@
+.section {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    /* Soft shadow */
+    margin-bottom: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #9CA3AF;
+    font-size: 0.9rem;
+}
+
+.filterBtn {
+    background: #F3F4F6;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #4B5563;
+    font-weight: 500;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filterBtn:hover {
+    background: #E5E7EB;
+}
+
+.chartContainer {
+    height: 300px;
+    width: 100%;
+}

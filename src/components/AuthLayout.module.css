@@ -1,0 +1,204 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.visualSide {
+    display: none;
+}
+
+.formSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 24px;
+    background: #ffffff;
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #6B7280;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: #111827;
+}
+
+.header {
+    margin-bottom: 32px;
+}
+
+.title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: #6B7280;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .visualSide {
+        display: flex;
+        width: 50%;
+        background-color: #755AE2;
+        background-image:
+            radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 0.2) 0, transparent 50%),
+            radial-gradient(at 50% 0%, hsla(255, 88%, 57%, 0.2) 0, transparent 50%),
+            radial-gradient(at 100% 0%, hsla(253, 16%, 7%, 0.2) 0, transparent 50%),
+            linear-gradient(135deg, #755AE2 0%, #5B43C3 100%);
+        position: relative;
+        padding: 48px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Dot Pattern Overlay */
+    .visualSide::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: 0.15;
+        background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+        background-size: 40px 40px;
+        pointer-events: none;
+    }
+
+    .visualContent {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .logoBadge {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        padding: 12px;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        display: inline-flex;
+        color: white;
+    }
+
+    .visualTitle {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+    }
+
+    .visualDescription {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1.6;
+        max-width: 400px;
+        margin-bottom: 48px;
+    }
+
+    /* Abstract Glass Card */
+    .glassCard {
+        width: 100%;
+        max-width: 320px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 24px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .cardHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .cardChip {
+        width: 48px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+    }
+
+    .cardLabel {
+        color: rgba(255, 255, 255, 0.6);
+        font-family: monospace;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+    }
+
+    .cardLines {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .cardLineLong {
+        height: 12px;
+        width: 70%;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 99px;
+    }
+
+    .cardLineShort {
+        height: 12px;
+        width: 40%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 99px;
+    }
+
+    .formSide {
+        width: 50%;
+        padding: 60px;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}

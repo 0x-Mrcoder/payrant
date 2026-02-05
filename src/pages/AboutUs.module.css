@@ -1,0 +1,590 @@
+/* Container */
+.container {
+    min-height: 100vh;
+    background: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.logoImg {
+    height: 50px;
+    width: auto;
+}
+
+.navLinks {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: #6B7280;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navLinks a:hover,
+.navLinks a.active {
+    color: #755AE2;
+}
+
+.navActions {
+    display: flex;
+    gap: 16px;
+}
+
+.loginBtn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+.loginBtn:hover {
+    background: #F3F4F6;
+}
+
+.ctaBtn {
+    background: #755AE2;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.ctaBtn:hover {
+    background: #6348C9;
+    transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+    padding: 100px 20px 80px;
+    text-align: center;
+    background: linear-gradient(180deg, #FAFAFF 0%, white 100%);
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    background: #F3E8FF;
+    color: #755AE2;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    background: #755AE2;
+    border-radius: 50%;
+}
+
+.headline {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #111827;
+    margin-bottom: 24px;
+}
+
+.gradientText {
+    background: linear-gradient(135deg, #917BE8 0%, #755AE2 50%, #5B3FCC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subheadline {
+    font-size: 1.25rem;
+    color: #6B7280;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Mission Section */
+.missionSection {
+    padding: 100px 20px;
+    background: white;
+}
+
+.sectionHeader {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+}
+
+.sectionHeader h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.sectionHeader p {
+    color: #6B7280;
+    font-size: 1.1rem;
+}
+
+.missionGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.missionCard {
+    text-align: center;
+    padding: 40px 30px;
+    background: #F9F9FF;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.missionCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(117, 90, 226, 0.15);
+}
+
+.missionIcon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #755AE2 0%, #917BE8 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto 24px;
+}
+
+.missionCard h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.missionCard p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* Stats Section */
+.statsSection {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #755AE2 0%, #917BE8 100%);
+}
+
+.statsGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.statCard {
+    text-align: center;
+    color: white;
+}
+
+.statValue {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.statLabel {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Values Section */
+.valuesSection {
+    padding: 100px 20px;
+    background: #F9F9FF;
+}
+
+.valuesGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.valueCard {
+    text-align: center;
+    padding: 50px 40px;
+    background: white;
+    border-radius: 20px;
+    border: 2px solid #F3E8FF;
+    transition: all 0.3s;
+}
+
+.valueCard:hover {
+    border-color: #755AE2;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(117, 90, 226, 0.1);
+}
+
+.valueCard svg {
+    color: #755AE2;
+    margin-bottom: 20px;
+}
+
+.valueCard h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.valueCard p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* Our Story Section */
+.storySection {
+    padding: 100px 20px;
+    background: white;
+    overflow: hidden;
+}
+
+.storyContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.storyText {
+    padding-right: 40px;
+}
+
+.storyText h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 24px;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.storyText p {
+    color: #4B5563;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.storyImageWrapper {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(117, 90, 226, 0.15);
+    background: #F9F9FF;
+}
+
+.storyImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.storyImageWrapper:hover .storyImage {
+    transform: scale(1.03);
+}
+
+.storyGlow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(117, 90, 226, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Team Section */
+.teamSection {
+    padding: 100px 20px;
+    background: #F9F9FF;
+}
+
+.teamGrid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.teamCard {
+    background: white;
+    border-radius: 24px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.teamCard:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.teamCard:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.teamCard:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.teamCard:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.teamCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(117, 90, 226, 0.15);
+    border-color: #F3E8FF;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.memberImage {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px;
+    position: relative;
+}
+
+.memberInitials {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #755AE2 0%, #917BE8 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(117, 90, 226, 0.25);
+    border: 4px solid white;
+}
+
+.memberInfo h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.memberRole {
+    display: block;
+    color: #755AE2;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.memberInfo p {
+    color: #6B7280;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+    background: #111827;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.ctaSection h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.ctaSection p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.ctaButton {
+    background: #755AE2;
+    color: white;
+    padding: 16px 40px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.ctaButton:hover {
+    background: #6348C9;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(117, 90, 226, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #F9FAFB;
+    padding: 60px 20px 30px;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 60px;
+    margin-bottom: 40px;
+}
+
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footerLogo {
+    height: 40px;
+    width: auto;
+}
+
+.footerBrand p {
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+.footerLinks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footerColumn h4 {
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.footerColumn a {
+    display: block;
+    color: #6B7280;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+
+.footerColumn a:hover {
+    color: #755AE2;
+}
+
+.footerBottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #E5E7EB;
+    color: #6B7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .missionGrid,
+    .valuesGrid,
+    .storyContent,
+    .teamGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .storyText {
+        padding-right: 0;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr;
+    }
+
+    .footerLinks {
+        grid-template-columns: 1fr;
+    }
+}

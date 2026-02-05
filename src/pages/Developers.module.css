@@ -1,0 +1,229 @@
+.container {
+    min-height: 100vh;
+    background: white;
+}
+
+/* Hero Section */
+.heroSection {
+    padding: 100px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 80vh;
+}
+
+.heroContent {
+    max-width: 45%;
+}
+
+.heroContent h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.heroContent p {
+    font-size: 1.25rem;
+    color: #4B5563;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 16px;
+}
+
+.primaryBtn {
+    background: #755AE2;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.primaryBtn:hover {
+    background: #6348C9;
+    transform: translateY(-2px);
+}
+
+.secondaryBtn {
+    background: white;
+    color: #111827;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid #E5E7EB;
+    font-size: 1rem;
+}
+
+.secondaryBtn:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+    transform: translateY(-2px);
+}
+
+.heroVisual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Code Window */
+.windowFrame {
+    background: #1E1E1E;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+    transition: transform 0.3s ease;
+}
+
+.windowFrame:hover {
+    transform: translateY(-5px);
+}
+
+.windowHeader {
+    background: #252526;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.windowDots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.windowTitle {
+    margin-left: auto;
+    color: #6B7280;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.windowBody {
+    padding: 30px;
+    color: #ABB2BF;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+@media (max-width: 960px) {
+    .heroSection {
+        flex-direction: column;
+        padding: 60px 24px;
+        gap: 60px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .heroContent {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .heroButtons {
+        justify-content: center;
+    }
+
+    .heroContent h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.gradientText {
+    background: linear-gradient(135deg, #755AE2 0%, #9F7AEA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.codeContent {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Features Section */
+.featuresSection {
+    padding: 80px 60px;
+    background: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+}
+
+.featureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.featureCard {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: #755AE2;
+}
+
+.featureIcon {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background: #F3E8FF;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.featureCard h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.featureCard p {
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .featuresSection {
+        padding: 60px 24px;
+    }
+}

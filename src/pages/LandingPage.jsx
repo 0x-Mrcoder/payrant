@@ -1,0 +1,606 @@
+import { Link } from 'react-router-dom';
+
+import { Shield, Globe, Smartphone, Code2, Zap, Layout, ArrowRight, CheckCircle2, Check, Users, Briefcase, Mail, Phone, MessageCircle, Headphones, CreditCard, Landmark, Wallet, QrCode, Hash, TrendingUp } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import styles from './LandingPage.module.css';
+import AnimatedSection from '../components/AnimatedSection';
+import { useState } from 'react';
+
+// Assets
+const MOCKUP = '/assets/dashboard_mockup_raw_1770133757174.png';
+const IMG_GLOBAL = '/assets/payrant_global_payments_cartoon_1770133800270.png';
+const IMG_SECURITY = '/assets/payrant_security_shield_cartoon_1770133814394.png';
+const IMG_DEVICES = '/assets/payrant_devices_cartoon_1770133830129.png';
+
+const LandingPage = () => {
+    const [productType, setProductType] = useState('business'); // 'business' or 'personal'
+    return (
+        <div className={styles.container}>
+            <Navbar onProductChange={setProductType} />
+
+            {/* Dynamic Hero Section */}
+            {productType === 'business' ? (
+                <header className={styles.hero}>
+                    <div className={`${styles.heroContent} ${styles.animateFadeUp}`}>
+                        <div className={styles.badge}>
+                            <span className={styles.badgeDot}></span> Trusted by 12,000+ African Businesses
+                        </div>
+                        <h1 className={styles.headline}>
+                            The Payment Gateway<br />
+                            <span className={styles.gradientText}>Built for Africa</span>
+                        </h1>
+                        <p className={styles.subheadline}>
+                            Accept payments with instant virtual accounts. Get paid directly to your bank with zero card fees and 99.9% uptime. Built for African businesses.
+                        </p>
+                        <div className={styles.heroButtons}>
+                            <Link to="/dashboard" className={styles.primaryBtn}>
+                                Start Accepting Payments <ArrowRight size={18} />
+                            </Link>
+                            <button className={styles.secondaryBtn}>Contact Sales</button>
+                        </div>
+                    </div>
+
+                    <div className={styles.heroVisual}>
+                        <div className={styles.mockupFrame}>
+                            <img src={MOCKUP} alt="Payrant Merchant Dashboard" className={styles.mockupImg} />
+                            <div className={styles.glow}></div>
+                        </div>
+                    </div>
+                </header>
+            ) : (
+                <header className={`${styles.hero} ${styles.personalHero}`}>
+                    <div className={`${styles.heroContent} ${styles.animateFadeUp}`}>
+                        <div className={`${styles.badge} ${styles.personalBadge}`}>
+                            <span className={styles.badgeDot}></span> Coming Soon
+                        </div>
+                        <h1 className={styles.headline}>Your Money,<br />
+                            <span className={styles.gradientText}>Simplified.</span>
+                        </h1>
+                        <p className={styles.subheadline}>
+                            Send, receive, and manage your money with ease. Zero fees on transfers,
+                            instant settlements, and a beautiful card for everyday spending.
+                        </p>
+                        <div className={styles.heroButtons}>
+                            <Link to="/dashboard" className={styles.primaryBtn}>
+                                Open Free Account <ArrowRight size={18} />
+                            </Link>
+                            <button className={styles.secondaryBtn}>Learn More</button>
+                        </div>
+
+                        {/* Personal Hero Features */}
+                        <div className={styles.personalFeatures}>
+                            <div className={styles.personalFeatureItem}>
+                                <CreditCard size={20} color="#755AE2" />
+                                <span>Free Virtual Card</span>
+                            </div>
+                            <div className={styles.personalFeatureItem}>
+                                <TrendingUp size={20} color="#755AE2" />
+                                <span>Save & Earn Interest</span>
+                            </div>
+                            {/* <div className={styles.personalFeatureItem}>
+                                <Shield size={20} color="#755AE2" />
+                                <span>Bank-Level Security</span>
+                            </div> */}
+                        </div>
+                    </div>
+
+                    <div className={`${styles.heroVisual} ${styles.animateSlideIn}`}>
+                        <img src="/assets/payrant_light_premium_mockup.png" alt="Payrant Mobile App" className={styles.personalHeroImg} />
+                        <div className={styles.glow}></div>
+                    </div>
+                </header>
+            )
+            }
+
+            {/* Trust / Stats Section */}
+            <AnimatedSection className={styles.statsSection} animation="scale" as="section">
+                <div className={styles.statsGrid}>
+                    <div className={styles.statItem}>
+                        <h4>2M+</h4>
+                        <p>Transactions Processed</p>
+                    </div>
+                    <div className={styles.statItem}>
+                        <h4>99.9%</h4>
+                        <p>Uptime SLA</p>
+                    </div>
+                    <div className={styles.statItem}>
+                        <h4>$500M+</h4>
+                        <p>Processed Annually</p>
+                    </div>
+                    <div className={styles.statItem}>
+                        <h4>12k+</h4>
+                        <p>Active Merchants</p>
+                    </div>
+                </div>
+            </AnimatedSection>
+
+            {/* Developer Section (Code Block) */}
+            <AnimatedSection className={styles.developerSection} id="developers" animation="slide" as="section">
+                <div className={styles.devContent}>
+                    <div className={styles.devText}>
+                        <div className={styles.iconCircle}>
+                            <Code2 size={24} color="#755AE2" />
+                        </div>
+                        <h2>Built for Developers</h2>
+                        <p>Integrate our unified API in minutes, not weeks. Comprehensive documentation,
+                            webhooks, and client libraries for every stack.</p>
+                        <ul className={styles.devList}>
+                            <li><CheckCircle2 size={16} /> RESTful API Architecture</li>
+                            <li><CheckCircle2 size={16} /> Real-time Webhooks</li>
+                            <li><CheckCircle2 size={16} /> Sandbox Environment</li>
+                        </ul>
+                        <button className={styles.docsBtn}>Read Documentation</button>
+                    </div>
+
+                    <div className={styles.codeBlock}>
+                        <div className={styles.codeHeader}>
+                            <div className={styles.windowControls}>
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span className={styles.fileName}>payment.js</span>
+                        </div>
+                        <pre className={styles.codeContent}>
+                            {`// Initialize Payment
+const response = await fetch('https://api-core.payrant.com/
+transaction/api.php?action=initialize', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer sk_test_5928...',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    amount: 5000,
+    email: 'customer@email.com'
+  })
+});`}
+                        </pre>
+                    </div>
+                </div>
+            </AnimatedSection>
+
+            {/* Features Section */}
+            <AnimatedSection className={styles.features} id="features" animation="scale" as="section">
+                <div className={styles.sectionHeader}>
+                    <h2>Everything You Need to Accept Bank Payments</h2>
+                    <p>Our virtual account solution provides all the tools to streamline your payment collection process and improve customer experience.</p>
+                </div>
+
+                <div className={styles.featureGrid}>
+                    {/* Feature 1: Checkout */}
+                    <div className={styles.featureCard}>
+                        <div className={styles.featureText}>
+                            <h3>Seamless Checkout</h3>
+                            <p>Increase conversion with our optimized, mobile-first checkout experience.</p>
+                        </div>
+                        <img src={IMG_GLOBAL} alt="Global Payments" className={styles.featureImg} />
+                    </div>
+
+                    {/* Feature 2: Security */}
+                    <div className={styles.featureCard}>
+                        <div className={styles.featureText}>
+                            <h3>Fraud Protection</h3>
+                            <p>AI-powered fraud detection that blocks bad actors while letting real customers through.</p>
+                        </div>
+                        <img src={IMG_SECURITY} alt="Security" className={styles.featureImg} />
+                    </div>
+
+                    {/* Feature 3: Dashboard */}
+                    <div className={`${styles.featureCard} ${styles.wideCard}`}>
+                        <div className={styles.featureText}>
+                            <h3>Merchant Dashboard</h3>
+                            <p>Track payments, manage disputes, and generate reports from one central command center.</p>
+                        </div>
+                        <img src={IMG_DEVICES} alt="Merchant Dashboard" className={styles.featureImgWide} />
+                    </div>
+                </div>
+            </AnimatedSection>
+
+            {/* Payment Methods Showcase */}
+            <AnimatedSection className={styles.paymentMethodsSection} animation="reveal" as="section">
+                <div className={styles.sectionHeader}>
+                    <h2>Accept Every Payment Method</h2>
+                    <p>Give your customers the flexibility to pay however they want</p>
+                </div>
+
+                <div className={styles.paymentMethodsContent}>
+                    <div className={styles.paymentMethodsList}>
+                        <div className={styles.paymentMethod}>
+                            <div className={styles.methodIcon}><CreditCard size={32} color="#755AE2" /></div>
+                            <h4>Cards</h4>
+                            <p>Visa, Mastercard, Verve</p>
+                        </div>
+                        <div className={styles.paymentMethod}>
+                            <div className={styles.methodIcon}><Landmark size={32} color="#755AE2" /></div>
+                            <h4>Bank Transfer</h4>
+                            <p>Direct bank payments</p>
+                        </div>
+                        <div className={styles.paymentMethod}>
+                            <div className={styles.methodIcon}><Smartphone size={32} color="#755AE2" /></div>
+                            <h4>USSD</h4>
+                            <p>Pay with any phone</p>
+                        </div>
+                        <div className={styles.paymentMethod}>
+                            <div className={styles.methodIcon}><Wallet size={32} color="#755AE2" /></div>
+                            <h4>Mobile Money</h4>
+                            <p>MTN, Airtel, Glo</p>
+                        </div>
+                        <div className={styles.paymentMethod}>
+                            <div className={styles.methodIcon}><QrCode size={32} color="#755AE2" /></div>
+                            <h4>QR Codes</h4>
+                            <p>Scan and pay</p>
+                        </div>
+                        <div className={styles.paymentMethod}>
+                            <div className={styles.methodIcon}><Globe size={32} color="#755AE2" /></div>
+                            <h4>International</h4>
+                            <p>150+ countries</p>
+                        </div>
+                    </div>
+                    <div className={styles.paymentMethodsVisual}>
+                        <img src="/assets/payment_methods_showcase_1770141695039.png" alt="Payment Methods" />
+                    </div>
+                </div>
+            </AnimatedSection>
+
+            {/* How It Works */}
+            <section className={styles.howItWorksSection}>
+                <div className={styles.sectionHeader}>
+                    <h2>Start accepting payments in minutes</h2>
+                    <p>Simple integration, powerful results</p>
+                </div>
+
+                <div className={styles.stepsGrid}>
+                    <div className={styles.step}>
+                        <div className={styles.stepNumber}>1</div>
+                        <h3>Sign Up</h3>
+                        <p>Create your account in under 2 minutes. No paperwork, just your business details.</p>
+                    </div>
+                    <div className={styles.stepArrow}>→</div>
+                    <div className={styles.step}>
+                        <div className={styles.stepNumber}>2</div>
+                        <h3>Integrate</h3>
+                        <p>Add our API to your website or use our no-code checkout page. Takes 10 minutes.</p>
+                    </div>
+                    <div className={styles.stepArrow}>→</div>
+                    <div className={styles.step}>
+                        <div className={styles.stepNumber}>3</div>
+                        <h3>Get Paid</h3>
+                        <p>Start accepting payments instantly. Money hits your account in real-time.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Security Deep Dive */}
+            <section className={styles.securitySection}>
+                <div className={styles.securityContent}>
+                    <div className={styles.securityText}>
+                        <h2>Enterprise-Grade Security</h2>
+                        <p className={styles.securityIntro}>
+                            Your customers' data is protected by the same security standards used by global banks.
+                        </p>
+                        <div className={styles.securityFeatures}>
+                            <div className={styles.securityFeature}>
+                                <Shield size={24} color="#059669" />
+                                <div>
+                                    <h4>PCI DSS Level 1</h4>
+                                    <p>Highest level of payment security certification</p>
+                                </div>
+                            </div>
+                            <div className={styles.securityFeature}>
+                                <Shield size={24} color="#059669" />
+                                <div>
+                                    <h4>3D Secure 2.0</h4>
+                                    <p>Advanced fraud prevention for card payments</p>
+                                </div>
+                            </div>
+                            <div className={styles.securityFeature}>
+                                <Shield size={24} color="#059669" />
+                                <div>
+                                    <h4>AI Fraud Detection</h4>
+                                    <p>Machine learning blocks suspicious transactions</p>
+                                </div>
+                            </div>
+                            <div className={styles.securityFeature}>
+                                <Shield size={24} color="#059669" />
+                                <div>
+                                    <h4>Data Encryption</h4>
+                                    <p>End-to-end 256-bit SSL encryption</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.securityVisual}>
+                        <img src="/assets/security_advanced_1770141710196.png" alt="Security Features" />
+                    </div>
+                </div>
+            </section>
+
+            {/* Case Studies */}
+            <AnimatedSection className={styles.caseStudiesSection} animation="scale" as="section">
+                <div className={styles.sectionHeader}>
+                    <h2>Powering Africa's fastest-growing businesses</h2>
+                    <p>Real results from real merchants</p>
+                </div>
+
+                <div className={styles.caseStudiesGrid}>
+                    <div className={styles.caseStudy}>
+                        <div className={styles.caseStudyMetric}>
+                            <h3>300%</h3>
+                            <p>Revenue Growth</p>
+                        </div>
+                        <h4>TechHub Lagos</h4>
+                        <p>"Switching to Payrant tripled our online revenue. The checkout is so smooth, we saw conversion rates jump from 2% to 8%."</p>
+                        <div className={styles.caseStudyAuthor}>
+                            <strong>Adebayo Ogunleye</strong> · CEO
+                        </div>
+                    </div>
+
+                    <div className={styles.caseStudy}>
+                        <div className={styles.caseStudyMetric}>
+                            <h3>$2M+</h3>
+                            <p>Processed</p>
+                        </div>
+                        <h4>ShopNaija</h4>
+                        <p>"Zero chargebacks in 6 months. The fraud detection is incredible. We've processed over $2M with complete peace of mind."</p>
+                        <div className={styles.caseStudyAuthor}>
+                            <strong>Chioma Nwosu</strong> · Founder
+                        </div>
+                    </div>
+
+                    <div className={styles.caseStudy}>
+                        <div className={styles.caseStudyMetric}>
+                            <h3>48hrs</h3>
+                            <p>Integration Time</p>
+                        </div>
+                        <h4>EduLearn Ghana</h4>
+                        <p>"We went live in 2 days. The API documentation is the best I've seen. Support team is incredibly responsive."</p>
+                        <div className={styles.caseStudyAuthor}>
+                            <strong>Kwame Mensah</strong> · CTO
+                        </div>
+                    </div>
+                </div>
+
+                <div className={styles.caseStudyVisual}>
+                    <img src="/assets/case_study_success_1770141725219.png" alt="Success Stories" />
+                </div>
+            </AnimatedSection>
+
+            {/* Mobile App Showcase */}
+            <section className={styles.mobileAppSection}>
+                <div className={styles.mobileAppContent}>
+                    <div className={styles.mobileAppVisual}>
+                        <img src="/assets/mobile_app_mockup_1770141740750.png" alt="Payrant Mobile Apps" />
+                    </div>
+                    <div className={styles.mobileAppText}>
+                        <h2>Manage your business on the go</h2>
+                        <p className={styles.mobileAppIntro}>
+                            Track payments, manage customers, and grow your revenue from anywhere with our iOS and Android apps.
+                        </p>
+                        <div className={styles.mobileAppFeatures}>
+                            <div className={styles.mobileFeature}>
+                                <CheckCircle2 size={20} color="#755AE2" />
+                                <span>Real-time payment notifications</span>
+                            </div>
+                            <div className={styles.mobileFeature}>
+                                <CheckCircle2 size={20} color="#755AE2" />
+                                <span>Instant refunds and disputes</span>
+                            </div>
+                            <div className={styles.mobileFeature}>
+                                <CheckCircle2 size={20} color="#755AE2" />
+                                <span>Revenue analytics dashboard</span>
+                            </div>
+                            <div className={styles.mobileFeature}>
+                                <CheckCircle2 size={20} color="#755AE2" />
+                                <span>Biometric security</span>
+                            </div>
+                        </div>
+                        <div className={styles.appStoreButtons}>
+                            <button className={styles.appStoreBtn}>
+                                <span className={styles.appStoreLogo}>🍎</span>
+                                <div>
+                                    <div className={styles.appStoreLabel}>Download on the</div>
+                                    <div className={styles.appStoreName}>App Store</div>
+                                </div>
+                            </button>
+                            <button className={styles.appStoreBtn}>
+                                <span className={styles.appStoreLogo}>▶</span>
+                                <div>
+                                    <div className={styles.appStoreLabel}>GET IT ON</div>
+                                    <div className={styles.appStoreName}>Google Play</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Pricing Section */}
+            <section className={styles.pricingSection} id="pricing">
+                <div className={styles.sectionHeader}>
+                    <h2>Transaction Fees</h2>
+                    <p>Transparent pricing with no hidden costs. Pay only for successful transactions.</p>
+                </div>
+
+                <div className={styles.pricingGrid}>
+                    <div className={styles.pricingCard}>
+                        <div className={styles.pricingHeader}>
+                            <h3>Checkout Payments</h3>
+                            <p className={styles.pricingDesc}>Accept payments through our checkout system with instant virtual account generation</p>
+                        </div>
+                        <div className={styles.pricingPrice}>
+                            <span className={styles.priceAmount}>1%</span>
+                            <span className={styles.priceLabel}>per successful transaction</span>
+                        </div>
+                        <ul className={styles.pricingFeatures}>
+                            <li><CheckCircle2 size={16} /> Instant virtual accounts</li>
+                            <li><CheckCircle2 size={16} /> Real-time notifications</li>
+                            <li><CheckCircle2 size={16} /> Automatic reconciliation</li>
+                            <li><CheckCircle2 size={16} /> Multiple bank options</li>
+                        </ul>
+                        <Link to="/dashboard" className={styles.pricingBtn}>Get Started</Link>
+                    </div>
+
+                    <div className={`${styles.pricingCard} ${styles.popularCard}`}>
+                        <div className={styles.popularBadge}>Most Popular</div>
+                        <div className={styles.pricingHeader}>
+                            <h3>Virtual Account Payments</h3>
+                            <p className={styles.pricingDesc}>Direct payments to virtual accounts created for your customers</p>
+                        </div>
+                        <div className={styles.pricingPrice}>
+                            <span className={styles.priceAmount}>1%</span>
+                            <span className={styles.priceLabel}>per successful transaction</span>
+                        </div>
+                        <ul className={styles.pricingFeatures}>
+                            <li><CheckCircle2 size={16} /> Dedicated virtual accounts</li>
+                            <li><CheckCircle2 size={16} /> Webhook notifications</li>
+                            <li><CheckCircle2 size={16} /> Customer management</li>
+                            <li><CheckCircle2 size={16} /> Advanced analytics</li>
+                            <li><CheckCircle2 size={16} /> API access</li>
+                        </ul>
+                        <Link to="/dashboard" className={styles.pricingBtnPrimary}>Get Started</Link>
+                    </div>
+
+                    <div className={styles.pricingCard}>
+                        <div className={styles.pricingHeader}>
+                            <h3>Payout Transfers</h3>
+                            <p className={styles.pricingDesc}>Send money to any Nigerian bank account through our payout API</p>
+                        </div>
+                        <div className={styles.pricingPrice}>
+                            <span className={styles.priceAmount}>₦20</span>
+                            <span className={styles.priceLabel}>flat fee per transfer</span>
+                        </div>
+                        <ul className={styles.pricingFeatures}>
+                            <li><CheckCircle2 size={16} /> All Nigerian banks</li>
+                            <li><CheckCircle2 size={16} /> Instant transfers</li>
+                            <li><CheckCircle2 size={16} /> Bulk payout support</li>
+                            <li><CheckCircle2 size={16} /> Transfer tracking</li>
+                            <li><CheckCircle2 size={16} /> Free account validation</li>
+                        </ul>
+                        <Link to="/dashboard" className={styles.pricingBtn}>Get Started</Link>
+                    </div>
+                </div>
+
+                <div className={styles.pricingNote}>
+                    <p><strong>Account Validation:</strong> Verify bank account details before processing transfers - <span className={styles.freeTag}>Free</span> with no additional charges</p>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className={styles.testimonialsSection}>
+                <div className={styles.sectionHeader}>
+                    <h2>Trusted by innovative businesses</h2>
+                    <p>See what our merchants are saying</p>
+                </div>
+
+                <div className={styles.testimonialsGrid}>
+                    <div className={styles.testimonialCard}>
+                        <div className={styles.testimonialStars}>★★★★★</div>
+                        <p className={styles.testimonialText}>
+                            "Payrant transformed how we handle payments. The API is incredibly easy to integrate,
+                            and settlements are instant. Our conversion rate increased by 40%."
+                        </p>
+                        <div className={styles.testimonialAuthor}>
+                            <div className={styles.authorAvatar}>AO</div>
+                            <div>
+                                <div className={styles.authorName}>Adebayo Ogunleye</div>
+                                <div className={styles.authorTitle}>CEO, TechHub Lagos</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.testimonialCard}>
+                        <div className={styles.testimonialStars}>★★★★★</div>
+                        <p className={styles.testimonialText}>
+                            "The fraud detection alone has saved us thousands. We've processed over $2M through
+                            Payrant with zero chargebacks. Absolutely game-changing."
+                        </p>
+                        <div className={styles.testimonialAuthor}>
+                            <div className={styles.authorAvatar}>CN</div>
+                            <div>
+                                <div className={styles.authorName}>Chioma Nwosu</div>
+                                <div className={styles.authorTitle}>Founder, ShopNaija</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.testimonialCard}>
+                        <div className={styles.testimonialStars}>★★★★★</div>
+                        <p className={styles.testimonialText}>
+                            "Best payment gateway we've used in Africa. The dashboard is beautiful,
+                            support is responsive, and the documentation is top-notch."
+                        </p>
+                        <div className={styles.testimonialAuthor}>
+                            <div className={styles.authorAvatar}>KM</div>
+                            <div>
+                                <div className={styles.authorName}>Kwame Mensah</div>
+                                <div className={styles.authorTitle}>CTO, EduLearn Ghana</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Support Section */}
+            <AnimatedSection className={styles.contactSection} id="contact" animation="reveal" as="section">
+                <div className={styles.contactContainer}>
+                    <div className={styles.contactContent}>
+                        <div className={styles.contactBadge}>
+                            <Headphones size={16} /> 24/7 Support
+                        </div>
+                        <h2>We're here to help you grow</h2>
+                        <p>Our dedicated support team is available round the clock to help you with integration, payments, or any questions you might have.</p>
+
+                        <div className={styles.contactMethods}>
+                            <div className={styles.contactMethod}>
+                                <div className={styles.methodIconWrapper}>
+                                    <Mail size={24} color="#755AE2" />
+                                </div>
+                                <div>
+                                    <h4>Email Support</h4>
+                                    <p>support@payrant.com</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.contactMethod}>
+                                <div className={styles.methodIconWrapper}>
+                                    <Phone size={24} color="#755AE2" />
+                                </div>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <p>+234 800 PAYRANT</p>
+                                </div>
+                            </div>
+
+                            <div className={styles.contactMethod}>
+                                <div className={styles.methodIconWrapper}>
+                                    <MessageCircle size={24} color="#755AE2" />
+                                </div>
+                                <div>
+                                    <h4>Live Chat</h4>
+                                    <p>Available 9am - 5pm WAT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.contactVisual}>
+                        <img src="/assets/payrant_contact_support.png" alt="Payrant Support Team" className={styles.contactImg} />
+                        <div className={styles.contactGlow}></div>
+                    </div>
+                </div>
+            </AnimatedSection>
+
+            {/* CTA Section */}
+            <section className={styles.ctaSection}>
+                <div className={styles.ctaContent}>
+                    <h2>Ready to scale your business?</h2>
+                    <p>Join thousands of businesses accepting payments with Payrant today.</p>
+                    <Link to="/dashboard" className={styles.ctaBigBtn}>Create Free Account</Link>
+                </div>
+            </section>
+
+            <Footer />
+        </div >
+    );
+};
+
+export default LandingPage;

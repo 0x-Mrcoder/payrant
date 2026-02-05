@@ -1,0 +1,227 @@
+/* Sidebar Container - "Floaty" Look */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    padding: 16px;
+    background: transparent;
+    z-index: 100;
+}
+
+/* Inner Container - The actual visible sidebar card with Payrant gradient */
+.container {
+    background: linear-gradient(180deg, #6B4FCE 0%, #755AE2 50%, #8B72E8 100%);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    box-shadow: 0 20px 60px -10px rgba(117, 90, 226, 0.4);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Decorative Glow Effect */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.logoContainer {
+    margin-bottom: 32px;
+    padding: 0 8px;
+}
+
+.logoText {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.dot {
+    color: #FCD34D;
+    text-shadow: 0 0 20px rgba(252, 211, 77, 0.5);
+}
+
+.nav {
+    flex: 1;
+    overflow-y: auto;
+    /* Hide Scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.nav::-webkit-scrollbar {
+    display: none;
+}
+
+.group {
+    margin-bottom: 28px;
+}
+
+.groupTitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-left: 12px;
+}
+
+.groupList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Link Styles */
+.link {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.875rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.iconBox {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.name {
+    flex: 1;
+}
+
+/* Hover State */
+.link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateX(4px);
+}
+
+.link:hover .iconBox {
+    transform: translateX(2px);
+    color: white;
+}
+
+/* Active State - Premium Glow */
+.activeLink {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.activeLink .iconBox {
+    color: #FCD34D;
+}
+
+.activeChevron {
+    color: #FCD34D;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Footer Section */
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.logoutBtn {
+    background: transparent;
+    border: none;
+    color: #FCA5A5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.825rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 8px;
+    opacity: 0.9;
+    transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.miniProfile {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #7C3AED;
+    margin-right: 10px;
+    box-shadow: 0 4px 12px rgba(252, 211, 77, 0.3);
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.metaName {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: white;
+}
+
+.metaRole {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+}
