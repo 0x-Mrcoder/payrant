@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /* Brand Colors - Raven / Payrant Premium */
@@ -41,11 +41,31 @@
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif !important;
   background-color: var(--color-bg-page);
   color: var(--color-text-main);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.stat-value,
+.chart-value-big {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
+  letter-spacing: -0.02em;
+  /* Tighter for premium feel */
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: 'Montserrat', system-ui, sans-serif !important;
 }
 
 /* Utilities */

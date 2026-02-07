@@ -1,187 +1,93 @@
-.heroGrid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
-}
-
-.card {
-    border-radius: 28px;
-    padding: 36px;
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    min-height: 260px;
-    position: relative;
-    overflow: hidden;
+    gap: 24px;
 }
 
-.card:hover {
-    transform: translateY(-6px);
-}
-
-/* Main Card: Premium Payrant Gradient */
-.mainCard {
-    background: linear-gradient(135deg, #755AE2 0%, #8B5CF6 50%, #A78BFA 100%);
-    color: white;
-    box-shadow: 0 24px 48px -12px rgba(117, 90, 226, 0.5);
-}
-
-/*Abstract decorative elements */
-.mainCard::before {
-    content: '';
-    position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 280px;
-    height: 280px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(30px);
-}
-
-.mainCard::after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(50px);
-}
-
-.settlementCard {
+.accountCard,
+.balanceCard {
     background: white;
-    box-shadow: 0 8px 32px rgba(117, 90, 226, 0.12);
-    border: 1px solid rgba(117, 90, 226, 0.08);
-    transition: all 0.4s;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
-.settlementCard:hover {
-    box-shadow: 0 20px 48px rgba(117, 90, 226, 0.18);
-}
-
-.cardHeader {
+/* Account Card Styles */
+.accountHeader {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 2;
+    gap: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
 }
 
-.label {
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 1.05rem;
+.accountName {
+    font-size: 1rem;
     font-weight: 600;
+    color: #111827;
+    /* Dark Gray */
 }
 
-.labelDark {
+.dropdownIcon {
+    font-size: 0.7rem;
     color: #6B7280;
-    font-size: 1.05rem;
-    font-weight: 600;
 }
 
-.iconBtn {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.accountNumberRow {
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: white;
+    gap: 8px;
+}
+
+.accountNumber {
+    font-size: 0.9rem;
+    color: #6B7280;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+.copyBtn {
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s;
-}
-
-.iconBtn:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: scale(1.1);
-}
-
-.balanceWrapper {
-    margin: 24px 0;
-    position: relative;
-    z-index: 2;
-}
-
-.currency {
-    font-size: 2.2rem;
-    font-weight: 400;
-    opacity: 0.9;
-    margin-right: 6px;
-}
-
-.balance {
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: -2px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.currencyDark {
-    font-size: 2.2rem;
-    font-weight: 400;
     color: #9CA3AF;
-    margin-right: 6px;
-}
-
-.balanceDark {
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: #1F2937;
-    letter-spacing: -2px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-.actions {
-    position: relative;
-    z-index: 2;
-}
-
-.badge {
-    background: #FEF3C7;
-    color: #D97706;
-    font-size: 0.75rem;
-    padding: 8px 14px;
-    border-radius: 24px;
-    font-weight: 600;
-}
-
-.actionRow {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 2px;
 }
 
-.helper {
-    color: #9CA3AF;
+.copyBtn:hover {
+    color: #4B5563;
+}
+
+/* Balance Card Styles */
+.balanceLabel {
+    font-size: 0.9rem;
+    color: #6B7280;
+    margin-bottom: 8px;
+}
+
+.balanceAmount {
+    font-size: 2rem;
+    /* Big balance font */
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.transferBtn {
+    width: 100%;
+    background-color: #0046AA;
+    /* Deep Blue like reference */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
     font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.circleBtn {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
-    border: 1px solid #E5E7EB;
-    color: #755AE2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color 0.2s;
 }
 
-.circleBtn:hover {
-    background: #755AE2;
-    color: white;
-    transform: rotate(45deg) scale(1.1);
-    box-shadow: 0 8px 16px rgba(117, 90, 226, 0.3);
+.transferBtn:hover {
+    background-color: #003380;
 }

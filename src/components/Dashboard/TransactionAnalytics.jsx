@@ -1,67 +1,51 @@
 import styles from './TransactionAnalytics.module.css';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { ArrowUpRight } from 'lucide-react';
-
-const data = [
-    { name: 'Jan', amount: 4000 },
-    { name: 'Feb', amount: 3000 },
-    { name: 'Mar', amount: 2000 },
-    { name: 'Apr', amount: 2780 },
-    { name: 'May', amount: 1890 },
-    { name: 'Jun', amount: 2390 },
-    { name: 'Jul', amount: 3490 },
-    { name: 'Aug', amount: 4200 },
-];
+import { TrendingUp, Users, CreditCard, Activity } from 'lucide-react';
 
 const TransactionAnalytics = () => {
     return (
-        <section className={styles.section}>
-            <div className={styles.header}>
-                <div>
-                    <h3 className={styles.title}>Transaction Analytics</h3>
-                    <p className={styles.subtitle}>Overview of your cash flow</p>
+        <section className={styles.analyticsGrid}>
+            <div className={styles.card}>
+                <div className={styles.header}>
+                    <span className={styles.title}>Total Volume</span>
+                    <TrendingUp size={16} className={styles.iconSuccess} />
                 </div>
-                <button className={styles.filterBtn}>
-                    This Year <ArrowUpRight size={14} />
-                </button>
+                <h3 className={styles.value}>₦12.4M</h3>
+                <p className={styles.trend}>
+                    <span className={styles.trendUp}>+12%</span> vs last month
+                </p>
             </div>
 
-            <div className={styles.chartContainer}>
-                <ResponsiveContainer width="100%" height="100%">
-                    <AreaChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                        <defs>
-                            <linearGradient id="colorAmount" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#755AE2" stopOpacity={0.3} />
-                                <stop offset="95%" stopColor="#755AE2" stopOpacity={0} />
-                            </linearGradient>
-                        </defs>
-                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E7EB" />
-                        <XAxis
-                            dataKey="name"
-                            axisLine={false}
-                            tickLine={false}
-                            tick={{ fill: '#9CA3AF', fontSize: 12 }}
-                            dy={10}
-                        />
-                        <YAxis
-                            axisLine={false}
-                            tickLine={false}
-                            tick={{ fill: '#9CA3AF', fontSize: 12 }}
-                        />
-                        <Tooltip
-                            contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-                            cursor={{ stroke: '#755AE2', strokeWidth: 1 }}
-                        />
-                        <Area
-                            type="monotone"
-                            dataKey="amount"
-                            stroke="#755AE2"
-                            strokeWidth={3}
-                            fillOpacity={1}
-                            fill="url(#colorAmount)"
-                        />
-                    </AreaChart>
-                </ResponsiveContainer>
+            <div className={styles.card}>
+                <div className={styles.header}>
+                    <span className={styles.title}>Success Rate</span>
+                    <Activity size={16} className={styles.iconPurple} />
+                </div>
+                <h3 className={styles.value}>99.4%</h3>
+                <p className={styles.trend}>
+                    <span className={styles.trendUp}>+0.2%</span> efficiency
+                </p>
+            </div>
+
+            <div className={styles.card}>
+                <div className={styles.header}>
+                    <span className={styles.title}>Active Customers</span>
+                    <Users size={16} className={styles.iconBlue} />
+                </div>
+                <h3 className={styles.value}>1,284</h3>
+                <p className={styles.trend}>
+                    <span className={styles.trendNeutral}>+45</span> new this week
+                </p>
+            </div>
+
+            <div className={styles.card}>
+                <div className={styles.header}>
+                    <span className={styles.title}>Failed Txns</span>
+                    <CreditCard size={16} className={styles.iconRed} />
+                </div>
+                <h3 className={styles.value}>0.6%</h3>
+                <p className={styles.trend}>
+                    <span className={styles.trendGood}>-0.1%</span> improvement
+                </p>
             </div>
         </section>
     );

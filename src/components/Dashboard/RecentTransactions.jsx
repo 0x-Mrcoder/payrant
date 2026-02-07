@@ -1,89 +1,56 @@
 import styles from './RecentTransactions.module.css';
-import { ArrowUpRight, ArrowDownLeft, Coffee, Globe, Smartphone, MonitorPlay } from 'lucide-react';
+import { ArrowDown, ArrowUp } from 'lucide-react';
 
 const RecentTransactions = () => {
     const transactions = [
         {
             id: 1,
-            title: 'Uber Ride',
-            subtitle: 'Transport',
-            amount: -3500,
-            date: 'Today, 9:41 AM',
-            status: 'successful',
-            icon: Smartphone,
+            title: 'Recieved from ***343456',
+            date: '13 December, 2026 9:15am',
+            amount: 5000,
+            type: 'credit'
         },
         {
             id: 2,
-            title: 'Upwork Escrow',
-            subtitle: 'Freelance Payout',
-            amount: 145000,
-            date: 'Yesterday, 4:30 PM',
-            status: 'successful',
-            icon: ArrowDownLeft,
+            title: 'Transfer to ***564771',
+            date: '18 December, 2026 9:12pm',
+            amount: -5000,
+            type: 'debit'
         },
         {
             id: 3,
-            title: 'Netflix Subscription',
-            subtitle: 'Entertainment',
-            amount: -5200,
-            date: 'Oct 24, 2026',
-            status: 'pending',
-            icon: MonitorPlay,
+            title: 'Recieved from ***39984',
+            date: '13 December, 2026 2:30pm',
+            amount: 5000,
+            type: 'credit'
         },
         {
             id: 4,
-            title: 'Mainstack',
-            subtitle: 'Digital Product',
-            amount: 2500,
-            date: 'Oct 23, 2026',
-            status: 'successful',
-            icon: ArrowDownLeft,
-        },
-        {
-            id: 5,
-            title: 'Starbucks Coffee',
-            subtitle: 'Food & Drink',
-            amount: -8500,
-            date: 'Oct 21, 2026',
-            status: 'failed',
-            icon: Coffee,
+            title: 'Transfer to ***99281',
+            date: '12 December, 2026 11:45am',
+            amount: -12500,
+            type: 'debit'
         }
     ];
 
     return (
-        <section className={styles.section}>
-            <div className={styles.header}>
-                <h3 className={styles.title}>Recent Transactions</h3>
-                <button className={styles.viewAllBtn}>View All</button>
-            </div>
-
+        <section className={styles.container}>
+            <h3 className={styles.title}>Recent Transactions</h3>
             <div className={styles.list}>
                 {transactions.map((tx) => (
                     <div key={tx.id} className={styles.item}>
                         <div className={styles.left}>
-                            <div className={styles.iconBox} style={{
-                                color: tx.amount > 0 ? '#059669' : '#4B5563',
-                                background: tx.amount > 0 ? '#D1FAE5' : '#F3F4F6'
-                            }}>
-                                {tx.amount > 0 ? <ArrowDownLeft size={20} /> : <ArrowUpRight size={20} />}
+                            <div className={`${styles.iconBox} ${tx.type === 'credit' ? styles.creditIcon : styles.debitIcon}`}>
+                                {tx.type === 'credit' ? <ArrowDown size={18} /> : <ArrowUp size={18} />}
                             </div>
                             <div className={styles.details}>
                                 <p className={styles.txTitle}>{tx.title}</p>
-                                <p className={styles.txSubtitle}>{tx.subtitle}</p>
+                                <p className={styles.txDate}>{tx.date}</p>
                             </div>
                         </div>
-
-                        <div className={styles.right}>
-                            <div className={styles.amountInfo}>
-                                <p className={styles.amount} style={{ color: tx.amount > 0 ? '#059669' : '#111827' }}>
-                                    {tx.amount > 0 ? '+' : ''}₦{Math.abs(tx.amount).toLocaleString()}
-                                </p>
-                                <p className={styles.date}>{tx.date}</p>
-                            </div>
-                            <span className={`${styles.status} ${styles[tx.status]}`}>
-                                {tx.status}
-                            </span>
-                        </div>
+                        <p className={styles.amount}>
+                            {tx.amount > 0 ? '+' : ''}N{Math.abs(tx.amount).toLocaleString()}
+                        </p>
                     </div>
                 ))}
             </div>
