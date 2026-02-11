@@ -1,59 +1,96 @@
 import { useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Check, Copy } from 'lucide-react';
+import { Copy, Check, Sun, Moon } from 'lucide-react';
+import styles from './CodeBlock.module.css';
 
-const CodeBlock = ({ language = 'json', children }) => {
+const CodeBlock = () => {
+    const [activeTab, setActiveTab] = useState('js');
     const [copied, setCopied] = useState(false);
+    const [theme, setTheme] = useState('dark');
+
+    const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+
+    const CODE = {
+        js: `// Initialize Payment
+const response = await fetch('https://api.payrant.com/v1/initialize', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer sk_test_5928...',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    amount: 5000,
+    email: 'customer@email.com',
+    callback_url: 'https://yoursite.com/callback'
+  })
+});`,
+        php: `// Initialize Payment
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://api.payrant.com/v1/initialize",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_HTTPHEADER => array(
+    "Authorization: Bearer sk_test_5928...",
+    "Content-Type: application/json"
+  ),
+  CURLOPT_POSTFIELDS => json_encode([
+    'amount' => 5000,
+    'email' => 'customer@email.com'
+  ])
+));
+
+$response = curl_exec($curl);`
+    };
 
     const handleCopy = () => {
-        navigator.clipboard.writeText(children);
+        navigator.clipboard.writeText(CODE[activeTab]);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
 
     return (
-        <div style={{ position: 'relative', borderRadius: '8px', overflow: 'hidden' }}>
-            <button
-                onClick={handleCopy}
-                style={{
-                    position: 'absolute',
-                    top: '12px',
-                    right: '12px',
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    borderRadius: '6px',
-                    padding: '6px',
-                    cursor: 'pointer',
-                    color: '#e5e7eb',
-                    transition: 'all 0.2s',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 10,
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'}
-                onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'}
-                aria-label="Copy code"
-                title="Copy to clipboard"
-            >
-                {copied ? <Check size={16} color="#4ade80" /> : <Copy size={16} />}
-            </button>
-            <SyntaxHighlighter
-                language={language}
-                style={vscDarkPlus}
-                customStyle={{
-                    margin: 0,
-                    padding: '24px',
-                    background: 'transparent',
-                    fontSize: '0.9rem',
-                    lineHeight: '1.6',
-                    fontFamily: "'JetBrains Mono', 'Fira Code', Consolas, monospace",
-                }}
-                wrapLongLines={true}
-            >
-                {children}
-            </SyntaxHighlighter>
+        <div className={`${styles.codeBlock} ${theme === 'light' ? styles.lightMode : ''}`}>
+            <div className={styles.codeHeader}>
+                <div className={styles.controlsGroup}>
+                    <div className={styles.windowControls}>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div className={styles.languageTabs}>
+                        <button
+                            className={`${styles.langTab} ${activeTab === 'js' ? styles.activeTab : ''}`}
+                            onClick={() => setActiveTab('js')}
+                        >
+                            payment.js
+                        </button>
+                        <button
+                            className={`${styles.langTab} ${activeTab === 'php' ? styles.activeTab : ''}`}
+                            onClick={() => setActiveTab('php')}
+                        >
+                            payment.php
+                        </button>
+                    </div>
+                </div>
+
+                <div className={styles.actionsGroup}>
+                    <button
+                        className={styles.toggleBtn}
+                        onClick={toggleTheme}
+                        aria-label="Toggle theme"
+                    >
+                        {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                    </button>
+                    <button
+                        className={`${styles.copyBtn} ${copied ? styles.copied : ''}`}
+                        onClick={handleCopy}
+                        aria-label="Copy code"
+                    >
+                        {copied ? <Check size={18} /> : <Copy size={18} />}
+                    </button>
+                </div>
+            </div>
+            <pre className={styles.codeContent}>
+                {CODE[activeTab]}
+            </pre>
         </div>
     );
 };

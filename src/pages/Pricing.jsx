@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import MeshBackground from '../components/MeshBackground';
 import styles from './Pricing.module.css';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -14,6 +16,12 @@ const Pricing = () => {
 
     return (
         <div className={styles.container}>
+            <SEO
+                title="Pricing - Payrant Virtual Account Payment Gateway | Transparent Pricing Plans"
+                description="Choose the perfect Payrant pricing plan for your business. Transparent pricing with no hidden fees. Checkout payments at 1%, virtual accounts at 1%, and competitive payout rates."
+                keywords="payrant pricing, payment gateway pricing, virtual account pricing, checkout pricing, payout pricing, fintech pricing Nigeria, payment processing costs"
+                url="https://payrant.com/pricing"
+            />
             <Navbar />
 
             {/* Custom Hero */}

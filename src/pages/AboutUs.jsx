@@ -1,27 +1,40 @@
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import MeshBackground from '../components/MeshBackground';
 import { Shield, Users, Globe, TrendingUp, Award, Heart } from 'lucide-react';
 import styles from './AboutUs.module.css';
 
 const AboutUs = () => {
     return (
         <div className={styles.container}>
+            <SEO
+                title="About Payrant - Leading Virtual Account Payment Gateway in Nigeria"
+                description="Learn about Payrant's mission to revolutionize payments in Nigeria. Discover our story, team, and commitment to providing secure virtual account payment solutions for businesses."
+                keywords="about payrant, payment gateway company, fintech Nigeria, virtual account provider, payment solution company, Nigerian fintech"
+                url="https://payrant.com/about"
+            />
             <Navbar />
 
             {/* Hero Section */}
             <header className={styles.hero}>
-                <div className={styles.heroContent}>
-                    <div className={styles.badge}>
-                        <span className={styles.badgeDot}></span> About Payrant
+                <div className={styles.heroWrapper}>
+                    <div className={styles.heroContent}>
+                        <div className={styles.badge}>
+                            <span className={styles.badgeDot}></span> About Payrant
+                        </div>
+                        <h1 className={styles.headline}>
+                            Building the Future of<br />
+                            <span className={styles.gradientText}>African Payments</span>
+                        </h1>
+                        <p className={styles.subheadline}>
+                            We're on a mission to make payments seamless for every business in Africa. Our virtual account solution empowers merchants to accept payments effortlessly.
+                        </p>
                     </div>
-                    <h1 className={styles.headline}>
-                        Building the Future of<br />
-                        <span className={styles.gradientText}>African Payments</span>
-                    </h1>
-                    <p className={styles.subheadline}>
-                        We're on a mission to make payments seamless for every business in Africa. Our virtual account solution empowers merchants to accept payments effortlessly.
-                    </p>
+                    <div className={styles.heroVisual}>
+                        <img src="/images/api_illustration.png" alt="Payrant Payment Infrastructure" className={styles.heroImage} />
+                    </div>
                 </div>
             </header>
 

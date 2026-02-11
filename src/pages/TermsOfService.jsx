@@ -1,107 +1,177 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { FileText, ArrowLeft } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import styles from './Legal.module.css';
 
 const TermsOfService = () => {
     return (
-        <div className={styles.legalPage}>
-            <div className={styles.legalContainer}>
-                <Link to="/signup" className={styles.backLink}>
-                    <ArrowLeft size={20} /> Back to Signup
-                </Link>
+        <>
+            <Navbar />
+            <div className={styles.legal}>
+                <SEO
+                    title="Terms of Service - Payrant Payment Gateway | Payrant"
+                    description="Read Payrant's Terms of Service. Understand your rights and obligations when using our payment gateway services."
+                    keywords="terms of service, user agreement, payrant terms, payment gateway terms, legal agreement"
+                    url="https://payrant.com/terms"
+                />
 
-                <h1 className={styles.title}>Terms of Service</h1>
-                <p className={styles.lastUpdated}>Last Updated: February 2026</p>
+                <div className={styles.container}>
+                    <Link to="/" className={styles.backLink}>
+                        <ArrowLeft size={20} />
+                        Back to Home
+                    </Link>
 
-                <div className={styles.content}>
-                    <section>
-                        <h2>1. Acceptance of Terms</h2>
-                        <p>
-                            By accessing and using Payrant's payment processing services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
-                        </p>
-                    </section>
+                    <div className={styles.header}>
+                        <div className={styles.iconWrapper}>
+                            <FileText size={32} />
+                        </div>
+                        <h1>Terms of Service</h1>
+                        <p className={styles.lastUpdated}>Last Updated: February 10, 2026</p>
+                    </div>
 
-                    <section>
-                        <h2>2. Use of Service</h2>
-                        <p>
-                            Payrant provides payment processing and financial technology services. You agree to use our services only for lawful purposes and in accordance with these Terms of Service.
-                        </p>
-                        <ul>
-                            <li>You must be at least 18 years old to use our services</li>
-                            <li>You must provide accurate and complete information during registration</li>
-                            <li>You are responsible for maintaining the confidentiality of your account</li>
-                            <li>You must not use our services for any illegal or unauthorized purpose</li>
-                        </ul>
-                    </section>
+                    <div className={styles.content}>
+                        <section>
+                            <h2>1. Acceptance of Terms</h2>
+                            <p>
+                                By accessing and using Payrant's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+                            </p>
+                        </section>
 
-                    <section>
-                        <h2>3. Payment Processing</h2>
-                        <p>
-                            Payrant facilitates payment transactions between merchants and customers. We reserve the right to refuse, cancel, or suspend any transaction that we believe violates these terms or poses a risk to our platform.
-                        </p>
-                    </section>
+                        <section>
+                            <h2>2. Service Description</h2>
+                            <p>
+                                Payrant provides a payment gateway platform that enables businesses to accept payments from customers through various payment methods including cards, bank transfers, and virtual accounts.
+                            </p>
+                            <p>Our services include but are not limited to:</p>
+                            <ul>
+                                <li>Payment processing and collection</li>
+                                <li>Virtual account generation</li>
+                                <li>Payout and transfer services</li>
+                                <li>Transaction monitoring and reporting</li>
+                                <li>API access for integration</li>
+                            </ul>
+                        </section>
 
-                    <section>
-                        <h2>4. Fees and Charges</h2>
-                        <p>
-                            Our fee structure is transparent and will be clearly communicated to you. Fees may include:
-                        </p>
-                        <ul>
-                            <li>Transaction processing fees</li>
-                            <li>Monthly service fees (if applicable)</li>
-                            <li>Chargeback fees</li>
-                            <li>Currency conversion fees</li>
-                        </ul>
-                    </section>
+                        <section>
+                            <h2>3. User Obligations</h2>
+                            <p>As a user of Payrant services, you agree to:</p>
+                            <ul>
+                                <li>Provide accurate and complete information during registration</li>
+                                <li>Maintain the security of your account credentials</li>
+                                <li>Comply with all applicable laws and regulations</li>
+                                <li>Not use the service for fraudulent or illegal activities</li>
+                                <li>Not attempt to circumvent security measures</li>
+                                <li>Notify us immediately of any unauthorized use of your account</li>
+                            </ul>
+                        </section>
 
-                    <section>
-                        <h2>5. Account Termination</h2>
-                        <p>
-                            We reserve the right to terminate or suspend your account at any time for violations of these terms, fraudulent activity, or any reason we deem necessary to protect our platform and users.
-                        </p>
-                    </section>
+                        <section>
+                            <h2>4. Payment Terms</h2>
+                            <p>
+                                Transaction fees are charged as specified in our pricing page. Fees are subject to change with 30 days notice. Settlement of funds occurs according to the schedule agreed upon during account setup.
+                            </p>
+                            <p>
+                                You authorize Payrant to deduct applicable fees from your transaction proceeds. Chargebacks and refunds are subject to our refund policy and may incur additional fees.
+                            </p>
+                        </section>
 
-                    <section>
-                        <h2>6. Limitation of Liability</h2>
-                        <p>
-                            Payrant shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the service.
-                        </p>
-                    </section>
+                        <section>
+                            <h2>5. Prohibited Activities</h2>
+                            <p>You may not use Payrant services for:</p>
+                            <ul>
+                                <li>Sale of illegal goods or services</li>
+                                <li>Money laundering or terrorist financing</li>
+                                <li>Pyramid schemes or multi-level marketing</li>
+                                <li>Adult content or services</li>
+                                <li>Gambling or betting services (without proper licensing)</li>
+                                <li>Cryptocurrency trading (without prior approval)</li>
+                            </ul>
+                        </section>
 
-                    <section>
-                        <h2>7. Intellectual Property</h2>
-                        <p>
-                            All content, trademarks, and data on this platform, including but not limited to software, databases, text, graphics, icons, and hyperlinks, are the property of Payrant and are protected by applicable laws.
-                        </p>
-                    </section>
+                        <section>
+                            <h2>6. Intellectual Property</h2>
+                            <p>
+                                All content, features, and functionality of Payrant services are owned by Payrant and are protected by international copyright, trademark, and other intellectual property laws.
+                            </p>
+                            <p>
+                                You may not reproduce, distribute, modify, or create derivative works of our services without explicit written permission.
+                            </p>
+                        </section>
 
-                    <section>
-                        <h2>8. Modifications to Terms</h2>
-                        <p>
-                            We reserve the right to modify these terms at any time. We will notify you of any changes by posting the new Terms of Service on this page and updating the "Last Updated" date.
-                        </p>
-                    </section>
+                        <section>
+                            <h2>7. Limitation of Liability</h2>
+                            <p>
+                                Payrant shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use the service.
+                            </p>
+                            <p>
+                                Our total liability shall not exceed the fees paid by you in the 12 months preceding the claim.
+                            </p>
+                        </section>
 
-                    <section>
-                        <h2>9. Governing Law</h2>
-                        <p>
-                            These Terms shall be governed and construed in accordance with the laws of the jurisdiction in which Payrant operates, without regard to its conflict of law provisions.
-                        </p>
-                    </section>
+                        <section>
+                            <h2>8. Service Availability</h2>
+                            <p>
+                                While we strive for 99.9% uptime, we do not guarantee uninterrupted access to our services. Scheduled maintenance will be communicated in advance when possible.
+                            </p>
+                        </section>
 
-                    <section>
-                        <h2>10. Contact Information</h2>
-                        <p>
-                            If you have any questions about these Terms of Service, please contact us at:
-                        </p>
-                        <p className={styles.contactInfo}>
-                            Email: legal@payrant.com<br />
-                            Address: Payrant Inc., [Your Business Address]
-                        </p>
-                    </section>
+                        <section>
+                            <h2>9. Account Termination</h2>
+                            <p>
+                                We reserve the right to suspend or terminate your account if you violate these terms or engage in fraudulent activity. You may close your account at any time by contacting support.
+                            </p>
+                            <p>
+                                Upon termination, you remain liable for all outstanding fees and obligations incurred before termination.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>10. Dispute Resolution</h2>
+                            <p>
+                                Any disputes arising from these terms shall be resolved through binding arbitration in accordance with the laws of the Federal Republic of Nigeria.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>11. Changes to Terms</h2>
+                            <p>
+                                We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Continued use of the service constitutes acceptance of modified terms.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>12. Governing Law</h2>
+                            <p>
+                                These terms shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria, without regard to its conflict of law provisions.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>13. Contact Information</h2>
+                            <p>
+                                For questions about these Terms of Service, please contact us at:
+                            </p>
+                            <p>
+                                Email: <a href="mailto:legal@payrant.com">legal@payrant.com</a><br />
+                                Address: 123 Herbert Macaulay Way, Yaba, Lagos, Nigeria
+                            </p>
+                        </section>
+                    </div>
+
+                    <div className={styles.footer}>
+                        <p>By using Payrant, you acknowledge that you have read and understood these Terms of Service.</p>
+                        <div className={styles.footerLinks}>
+                            <Link to="/privacy">Privacy Policy</Link>
+                            <Link to="/contact">Contact Us</Link>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 };
 

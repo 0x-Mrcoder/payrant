@@ -1,145 +1,236 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { Shield, ArrowLeft } from 'lucide-react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import styles from './Legal.module.css';
 
 const PrivacyPolicy = () => {
     return (
-        <div className={styles.legalPage}>
-            <div className={styles.legalContainer}>
-                <Link to="/signup" className={styles.backLink}>
-                    <ArrowLeft size={20} /> Back to Signup
-                </Link>
+        <>
+            <Navbar />
+            <div className={styles.legal}>
+                <SEO
+                    title="Privacy Policy - How We Protect Your Data | Payrant"
+                    description="Learn how Payrant collects, uses, and protects your personal information. Our commitment to data privacy and security."
+                    keywords="privacy policy, data protection, gdpr, ndpr, personal information, data security, privacy rights"
+                    url="https://payrant.com/privacy"
+                />
 
-                <h1 className={styles.title}>Privacy Policy</h1>
-                <p className={styles.lastUpdated}>Last Updated: February 2026</p>
+                <div className={styles.container}>
+                    <Link to="/" className={styles.backLink}>
+                        <ArrowLeft size={20} />
+                        Back to Home
+                    </Link>
 
-                <div className={styles.content}>
-                    <section>
-                        <h2>1. Introduction</h2>
-                        <p>
-                            At Payrant, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our payment processing services.
-                        </p>
-                    </section>
+                    <div className={styles.header}>
+                        <div className={styles.iconWrapper}>
+                            <Shield size={32} />
+                        </div>
+                        <h1>Privacy Policy</h1>
+                        <p className={styles.lastUpdated}>Last Updated: February 10, 2026</p>
+                    </div>
 
-                    <section>
-                        <h2>2. Information We Collect</h2>
-                        <p>We collect information that you provide directly to us, including:</p>
-                        <ul>
-                            <li><strong>Personal Information:</strong> Name, email address, phone number, business name</li>
-                            <li><strong>Financial Information:</strong> Bank account details, payment card information</li>
-                            <li><strong>Transaction Data:</strong> Details about payments you send and receive</li>
-                            <li><strong>Technical Data:</strong> IP address, browser type, device information, usage data</li>
-                            <li><strong>Communication Data:</strong> Your communications with us, including customer support</li>
-                        </ul>
-                    </section>
+                    <div className={styles.content}>
+                        <section>
+                            <h2>1. Introduction</h2>
+                            <p>
+                                At Payrant, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our payment gateway services.
+                            </p>
+                            <p>
+                                By using Payrant, you consent to the data practices described in this policy.
+                            </p>
+                        </section>
 
-                    <section>
-                        <h2>3. How We Use Your Information</h2>
-                        <p>We use the information we collect to:</p>
-                        <ul>
-                            <li>Process and complete payment transactions</li>
-                            <li>Verify your identity and prevent fraud</li>
-                            <li>Provide customer support and respond to inquiries</li>
-                            <li>Improve and optimize our services</li>
-                            <li>Send you important updates and notifications</li>
-                            <li>Comply with legal and regulatory requirements</li>
-                            <li>Analyze usage patterns and trends</li>
-                        </ul>
-                    </section>
+                        <section>
+                            <h2>2. Information We Collect</h2>
 
-                    <section>
-                        <h2>4. Information Sharing and Disclosure</h2>
-                        <p>We may share your information with:</p>
-                        <ul>
-                            <li><strong>Service Providers:</strong> Third-party companies that help us operate our business</li>
-                            <li><strong>Financial Institutions:</strong> Banks and payment networks to process transactions</li>
-                            <li><strong>Legal Authorities:</strong> When required by law or to protect our rights</li>
-                            <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
-                        </ul>
-                        <p>
-                            We do not sell your personal information to third parties for marketing purposes.
-                        </p>
-                    </section>
+                            <h3>2.1 Personal Information</h3>
+                            <p>We collect information that you provide directly to us, including:</p>
+                            <ul>
+                                <li>Name, email address, and phone number</li>
+                                <li>Business information (company name, address, tax ID)</li>
+                                <li>Bank account details for settlements</li>
+                                <li>Identity verification documents (BVN, ID cards)</li>
+                            </ul>
 
-                    <section>
-                        <h2>5. Data Security</h2>
-                        <p>
-                            We implement industry-standard security measures to protect your information, including:
-                        </p>
-                        <ul>
-                            <li>Encryption of sensitive data during transmission and storage</li>
-                            <li>Secure servers and databases with restricted access</li>
-                            <li>Regular security audits and vulnerability assessments</li>
-                            <li>Multi-factor authentication for account access</li>
-                            <li>Employee training on data protection best practices</li>
-                        </ul>
-                    </section>
+                            <h3>2.2 Transaction Information</h3>
+                            <p>When you process payments, we collect:</p>
+                            <ul>
+                                <li>Transaction amounts and currency</li>
+                                <li>Payment method details</li>
+                                <li>Customer information (as provided by you)</li>
+                                <li>Transaction metadata</li>
+                            </ul>
 
-                    <section>
-                        <h2>6. Data Retention</h2>
-                        <p>
-                            We retain your information for as long as necessary to provide our services, comply with legal obligations, resolve disputes, and enforce our agreements. Transaction data may be retained for up to 7 years for accounting and regulatory purposes.
-                        </p>
-                    </section>
+                            <h3>2.3 Technical Information</h3>
+                            <p>We automatically collect certain information, including:</p>
+                            <ul>
+                                <li>IP addresses and device information</li>
+                                <li>Browser type and version</li>
+                                <li>Usage data and analytics</li>
+                                <li>Cookies and similar tracking technologies</li>
+                            </ul>
+                        </section>
 
-                    <section>
-                        <h2>7. Your Rights</h2>
-                        <p>You have the right to:</p>
-                        <ul>
-                            <li>Access the personal information we hold about you</li>
-                            <li>Request correction of inaccurate or incomplete data</li>
-                            <li>Request deletion of your personal information</li>
-                            <li>Object to or restrict certain processing activities</li>
-                            <li>Export your data in a portable format</li>
-                            <li>Withdraw consent where processing is based on consent</li>
-                        </ul>
-                        <p>
-                            To exercise these rights, please contact us at privacy@payrant.com
-                        </p>
-                    </section>
+                        <section>
+                            <h2>3. How We Use Your Information</h2>
+                            <p>We use the collected information to:</p>
+                            <ul>
+                                <li>Process and facilitate payments</li>
+                                <li>Verify your identity and prevent fraud</li>
+                                <li>Provide customer support</li>
+                                <li>Send transaction notifications and updates</li>
+                                <li>Improve our services and develop new features</li>
+                                <li>Comply with legal obligations</li>
+                                <li>Send marketing communications (with your consent)</li>
+                            </ul>
+                        </section>
 
-                    <section>
-                        <h2>8. Cookies and Tracking Technologies</h2>
-                        <p>
-                            We use cookies and similar technologies to enhance your experience, analyze usage, and deliver personalized content. You can control cookie preferences through your browser settings.
-                        </p>
-                    </section>
+                        <section>
+                            <h2>4. Data Sharing and Disclosure</h2>
 
-                    <section>
-                        <h2>9. International Data Transfers</h2>
-                        <p>
-                            Your information may be transferred to and processed in countries other than your country of residence. We ensure appropriate safeguards are in place to protect your data during international transfers.
-                        </p>
-                    </section>
+                            <h3>4.1 Service Providers</h3>
+                            <p>
+                                We share information with third-party service providers who perform services on our behalf, including payment processors, banks, identity verification services, and cloud hosting providers.
+                            </p>
 
-                    <section>
-                        <h2>10. Children's Privacy</h2>
-                        <p>
-                            Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children.
-                        </p>
-                    </section>
+                            <h3>4.2 Legal Requirements</h3>
+                            <p>
+                                We may disclose your information if required by law or in response to valid requests by public authorities.
+                            </p>
 
-                    <section>
-                        <h2>11. Changes to This Privacy Policy</h2>
-                        <p>
-                            We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page and updating the "Last Updated" date.
-                        </p>
-                    </section>
+                            <h3>4.3 Business Transfers</h3>
+                            <p>
+                                In the event of a merger, acquisition, or sale of assets, your information may be transferred to the acquiring entity.
+                            </p>
 
-                    <section>
-                        <h2>12. Contact Us</h2>
-                        <p>
-                            If you have any questions or concerns about this Privacy Policy, please contact us at:
-                        </p>
-                        <p className={styles.contactInfo}>
-                            Email: privacy@payrant.com<br />
-                            Address: Payrant Inc., [Your Business Address]<br />
-                            Phone: [Your Contact Number]
-                        </p>
-                    </section>
+                            <h3>4.4 With Your Consent</h3>
+                            <p>
+                                We may share information with third parties when you explicitly consent to such sharing.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>5. Data Security</h2>
+                            <p>
+                                We implement industry-standard security measures to protect your information:
+                            </p>
+                            <ul>
+                                <li>256-bit SSL/TLS encryption for data in transit</li>
+                                <li>AES-256 encryption for data at rest</li>
+                                <li>PCI-DSS Level 1 compliance</li>
+                                <li>Regular security audits and penetration testing</li>
+                                <li>Access controls and authentication mechanisms</li>
+                                <li>Employee training on data protection</li>
+                            </ul>
+                            <p>
+                                However, no method of transmission over the Internet is 100% secure. While we strive to protect your information, we cannot guarantee absolute security.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>6. Data Retention</h2>
+                            <p>
+                                We retain your information for as long as necessary to provide our services and comply with legal obligations. Transaction data is typically retained for 7 years for accounting and regulatory purposes.
+                            </p>
+                            <p>
+                                You may request deletion of your personal information, subject to legal and regulatory requirements.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>7. Your Rights</h2>
+                            <p>You have the right to:</p>
+                            <ul>
+                                <li><strong>Access:</strong> Request a copy of your personal information</li>
+                                <li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
+                                <li><strong>Erasure:</strong> Request deletion of your personal information</li>
+                                <li><strong>Restriction:</strong> Limit how we use your data</li>
+                                <li><strong>Portability:</strong> Receive your data in a structured format</li>
+                                <li><strong>Object:</strong> Object to processing of your personal information</li>
+                                <li><strong>Withdraw Consent:</strong> Withdraw consent for data processing</li>
+                            </ul>
+                            <p>
+                                To exercise these rights, contact us at <a href="mailto:privacy@payrant.com">privacy@payrant.com</a>
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>8. Cookies and Tracking</h2>
+                            <p>
+                                We use cookies and similar technologies to enhance your experience, analyze usage, and deliver personalized content.
+                            </p>
+                            <p>Types of cookies we use:</p>
+                            <ul>
+                                <li><strong>Essential Cookies:</strong> Required for basic functionality</li>
+                                <li><strong>Analytics Cookies:</strong> Help us understand how you use our services</li>
+                                <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements</li>
+                            </ul>
+                            <p>
+                                You can control cookies through your browser settings, but disabling certain cookies may affect functionality.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>9. International Data Transfers</h2>
+                            <p>
+                                Your information may be transferred to and processed in countries other than Nigeria. We ensure appropriate safeguards are in place to protect your data in accordance with this Privacy Policy.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>10. Children's Privacy</h2>
+                            <p>
+                                Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>11. Changes to This Policy</h2>
+                            <p>
+                                We may update this Privacy Policy from time to time. We will notify you of significant changes by email or through our platform. Continued use of our services after changes constitutes acceptance of the updated policy.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>12. Compliance</h2>
+                            <p>
+                                Payrant complies with:
+                            </p>
+                            <ul>
+                                <li>Nigeria Data Protection Regulation (NDPR)</li>
+                                <li>General Data Protection Regulation (GDPR) where applicable</li>
+                                <li>PCI-DSS standards</li>
+                                <li>Other applicable data protection laws</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>13. Contact Us</h2>
+                            <p>
+                                For questions or concerns about this Privacy Policy or our data practices, please contact:
+                            </p>
+                            <p>
+                                <strong>Data Protection Officer</strong><br />
+                                Email: <a href="mailto:privacy@payrant.com">privacy@payrant.com</a><br />
+                                Address: 123 Herbert Macaulay Way, Yaba, Lagos, Nigeria
+                            </p>
+                        </section>
+                    </div>
+
+                    <div className={styles.footer}>
+                        <p>Your privacy is important to us. We are committed to protecting your personal information.</p>
+                        <div className={styles.footerLinks}>
+                            <Link to="/terms">Terms of Service</Link>
+                            <Link to="/contact">Contact Us</Link>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 };
 

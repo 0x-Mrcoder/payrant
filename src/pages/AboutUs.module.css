@@ -84,14 +84,29 @@
 
 /* Hero */
 .hero {
-    padding: 100px 20px 80px;
-    text-align: center;
+    padding: 120px 20px 80px;
     background: linear-gradient(180deg, #FAFAFF 0%, white 100%);
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .heroContent {
-    max-width: 800px;
-    margin: 0 auto;
+    text-align: left;
+    max-width: 100%;
 }
 
 .badge {
@@ -134,8 +149,40 @@
     font-size: 1.25rem;
     color: #6B7280;
     line-height: 1.6;
-    max-width: 650px;
-    margin: 0 auto;
+    margin-bottom: 0;
+    max-width: 500px;
+}
+
+.heroVisual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.heroImage {
+    margin-top: 90px;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    filter: drop-shadow(0 20px 40px rgba(117, 90, 226, 0.2));
+    animation: float 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+    border-radius: 20%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotateY(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotateY(2deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotateY(0deg);
+    }
 }
 
 /* Mission Section */

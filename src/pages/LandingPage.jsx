@@ -5,7 +5,12 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import styles from './LandingPage.module.css';
 import AnimatedSection from '../components/AnimatedSection';
+import PartnerStrip from '../components/PartnerStrip';
 import { useState } from 'react';
+import CodeBlock from '../components/CodeBlock';
+import FAQAccordion from '../components/FAQAccordion';
+import SEO from '../components/SEO';
+import MeshBackground from '../components/MeshBackground';
 
 // Assets
 const MOCKUP = '/assets/dashboard_mockup_raw_1770133757174.png';
@@ -13,15 +18,48 @@ const IMG_GLOBAL = '/assets/payrant_global_payments_cartoon_1770133800270.png';
 const IMG_SECURITY = '/assets/payrant_security_shield_cartoon_1770133814394.png';
 const IMG_DEVICES = '/assets/payrant_devices_cartoon_1770133830129.png';
 
+const FAQ_ITEMS = [
+    {
+        question: "How quickly can I start accepting payments?",
+        answer: "You can create an account and start accepting payments in less than 15 minutes. Our verification process is automated and fast."
+    },
+    {
+        question: "When do I get my money?",
+        answer: "Settlements are instant for virtual account payments. Card payments are settled the next day (T+1) directly to your bank account."
+    },
+    {
+        question: "Do I need a registered business?",
+        answer: "No, you can start as an individual offering freelance services (\"Starter\" tier) and upgrade to a registered business account (\"Business\" tier) later."
+    },
+    {
+        question: "What banks do you support?",
+        answer: "We support payouts to all commercial banks and mobile money operators in Nigeria, Ghana, Kenya, and South Africa."
+    },
+    {
+        question: "Is Payrant secure?",
+        answer: "Yes. We are PCI-DSS Level 1 certified, ISO 27001 compliant, and licensed by the Central Bank. Your funds are insured."
+    },
+    {
+        question: "Can I use Payrant for international payments?",
+        answer: "Yes! You can accept USD, GBP, and EUR card payments from customers anywhere in the world."
+    }
+];
+
 const LandingPage = () => {
     const [productType, setProductType] = useState('business'); // 'business' or 'personal'
     return (
-        <div className={styles.container}>
+        <div className={styles.landingContainer}>
+            <SEO
+                title="Virtual Account Payment Gateway | Secure Bank Payments in Nigeria"
+                description="Payrant offers secure virtual account payment gateway for Nigerian businesses. Accept bank payments without cards, reduce failed transactions, and increase conversion rates with our advanced payment solution."
+                keywords="virtual account, payment gateway, bank payments, Nigeria, online payments, fintech, payment processing, secure payments, API integration, payment solution"
+            />
             <Navbar onProductChange={setProductType} />
 
             {/* Dynamic Hero Section */}
             {productType === 'business' ? (
                 <header className={styles.hero}>
+                    <MeshBackground />
                     <div className={`${styles.heroContent} ${styles.animateFadeUp}`}>
                         <div className={styles.badge}>
                             <span className={styles.badgeDot}></span> Trusted by 12,000+ African Businesses
@@ -50,6 +88,7 @@ const LandingPage = () => {
                 </header>
             ) : (
                 <header className={`${styles.hero} ${styles.personalHero}`}>
+                    <MeshBackground />
                     <div className={`${styles.heroContent} ${styles.animateFadeUp}`}>
                         <div className={`${styles.badge} ${styles.personalBadge}`}>
                             <span className={styles.badgeDot}></span> Coming Soon
@@ -115,6 +154,9 @@ const LandingPage = () => {
                 </div>
             </AnimatedSection>
 
+            {/* Partner Strip */}
+            <PartnerStrip />
+
             {/* Developer Section (Code Block) */}
             <AnimatedSection className={styles.developerSection} id="developers" animation="slide" as="section">
                 <div className={styles.devContent}>
@@ -133,34 +175,12 @@ const LandingPage = () => {
                         <button className={styles.docsBtn}>Read Documentation</button>
                     </div>
 
-                    <div className={styles.codeBlock}>
-                        <div className={styles.codeHeader}>
-                            <div className={styles.windowControls}>
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span className={styles.fileName}>payment.js</span>
-                        </div>
-                        <pre className={styles.codeContent}>
-                            {`// Initialize Payment
-const response = await fetch('https://api-core.payrant.com/
-transaction/api.php?action=initialize', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer sk_test_5928...',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    amount: 5000,
-    email: 'customer@email.com'
-  })
-});`}
-                        </pre>
-                    </div>
+                    <CodeBlock />
                 </div>
             </AnimatedSection>
 
             {/* Features Section */}
-            <AnimatedSection className={styles.features} id="features" animation="scale" as="section">
+            < AnimatedSection className={styles.features} id="features" animation="scale" as="section" >
                 <div className={styles.sectionHeader}>
                     <h2>Everything You Need to Accept Bank Payments</h2>
                     <p>Our virtual account solution provides all the tools to streamline your payment collection process and improve customer experience.</p>
@@ -194,10 +214,10 @@ transaction/api.php?action=initialize', {
                         <img src={IMG_DEVICES} alt="Merchant Dashboard" className={styles.featureImgWide} />
                     </div>
                 </div>
-            </AnimatedSection>
+            </AnimatedSection >
 
             {/* Payment Methods Showcase */}
-            <AnimatedSection className={styles.paymentMethodsSection} animation="reveal" as="section">
+            < AnimatedSection className={styles.paymentMethodsSection} animation="reveal" as="section" >
                 <div className={styles.sectionHeader}>
                     <h2>Accept Every Payment Method</h2>
                     <p>Give your customers the flexibility to pay however they want</p>
@@ -240,10 +260,10 @@ transaction/api.php?action=initialize', {
                         <img src="/assets/payment_methods_showcase_1770141695039.png" alt="Payment Methods" />
                     </div>
                 </div>
-            </AnimatedSection>
+            </AnimatedSection >
 
             {/* How It Works */}
-            <section className={styles.howItWorksSection}>
+            < section className={styles.howItWorksSection} >
                 <div className={styles.sectionHeader}>
                     <h2>Start accepting payments in minutes</h2>
                     <p>Simple integration, powerful results</p>
@@ -268,10 +288,10 @@ transaction/api.php?action=initialize', {
                         <p>Start accepting payments instantly. Money hits your account in real-time.</p>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Security Deep Dive */}
-            <section className={styles.securitySection}>
+            < section className={styles.securitySection} >
                 <div className={styles.securityContent}>
                     <div className={styles.securityText}>
                         <h2>Enterprise-Grade Security</h2>
@@ -313,10 +333,10 @@ transaction/api.php?action=initialize', {
                         <img src="/assets/security_advanced_1770141710196.png" alt="Security Features" />
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Case Studies */}
-            <AnimatedSection className={styles.caseStudiesSection} animation="scale" as="section">
+            < AnimatedSection className={styles.caseStudiesSection} animation="scale" as="section" >
                 <div className={styles.sectionHeader}>
                     <h2>Powering Africa's fastest-growing businesses</h2>
                     <p>Real results from real merchants</p>
@@ -363,59 +383,48 @@ transaction/api.php?action=initialize', {
                 <div className={styles.caseStudyVisual}>
                     <img src="/assets/case_study_success_1770141725219.png" alt="Success Stories" />
                 </div>
-            </AnimatedSection>
+            </AnimatedSection >
 
-            {/* Mobile App Showcase */}
-            <section className={styles.mobileAppSection}>
+            {/* Mobile Dashboard Showcase */}
+            < section className={styles.mobileAppSection} >
                 <div className={styles.mobileAppContent}>
                     <div className={styles.mobileAppVisual}>
-                        <img src="/assets/mobile_app_mockup_1770141740750.png" alt="Payrant Mobile Apps" />
+                        <img src="/home/mrcoder/.gemini/antigravity/brain/449c9fca-9f2d-42f3-9528-276010e749a7/payrant_business_central_dashboard_2_1770755651604.png" alt="Payrant Mobile Dashboard" />
                     </div>
                     <div className={styles.mobileAppText}>
-                        <h2>Manage your business on the go</h2>
+                        <h2>Monitor your business from anywhere</h2>
                         <p className={styles.mobileAppIntro}>
-                            Track payments, manage customers, and grow your revenue from anywhere with our iOS and Android apps.
+                            Access your payment dashboard on any device. Track real-time transactions, manage settlements, and handle disputes on the go.
                         </p>
                         <div className={styles.mobileAppFeatures}>
                             <div className={styles.mobileFeature}>
                                 <CheckCircle2 size={20} color="#755AE2" />
-                                <span>Real-time payment notifications</span>
+                                <span>Real-time transaction monitoring</span>
                             </div>
                             <div className={styles.mobileFeature}>
                                 <CheckCircle2 size={20} color="#755AE2" />
-                                <span>Instant refunds and disputes</span>
+                                <span>Instant settlement status</span>
                             </div>
                             <div className={styles.mobileFeature}>
                                 <CheckCircle2 size={20} color="#755AE2" />
-                                <span>Revenue analytics dashboard</span>
+                                <span>Dispute resolution center</span>
                             </div>
                             <div className={styles.mobileFeature}>
                                 <CheckCircle2 size={20} color="#755AE2" />
-                                <span>Biometric security</span>
+                                <span>Biometric access control</span>
                             </div>
                         </div>
-                        <div className={styles.appStoreButtons}>
-                            <button className={styles.appStoreBtn}>
-                                <span className={styles.appStoreLogo}>🍎</span>
-                                <div>
-                                    <div className={styles.appStoreLabel}>Download on the</div>
-                                    <div className={styles.appStoreName}>App Store</div>
-                                </div>
-                            </button>
-                            <button className={styles.appStoreBtn}>
-                                <span className={styles.appStoreLogo}>▶</span>
-                                <div>
-                                    <div className={styles.appStoreLabel}>GET IT ON</div>
-                                    <div className={styles.appStoreName}>Google Play</div>
-                                </div>
-                            </button>
+                        <div className={styles.heroButtons} style={{ marginTop: '24px', justifyContent: 'flex-start' }}>
+                            <Link to="/dashboard" className={styles.primaryBtn}>
+                                Access Dashboard <ArrowRight size={18} />
+                            </Link>
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Pricing Section */}
-            <section className={styles.pricingSection} id="pricing">
+            < section className={styles.pricingSection} id="pricing" >
                 <div className={styles.sectionHeader}>
                     <h2>Transaction Fees</h2>
                     <p>Transparent pricing with no hidden costs. Pay only for successful transactions.</p>
@@ -483,10 +492,10 @@ transaction/api.php?action=initialize', {
                 <div className={styles.pricingNote}>
                     <p><strong>Account Validation:</strong> Verify bank account details before processing transfers - <span className={styles.freeTag}>Free</span> with no additional charges</p>
                 </div>
-            </section>
+            </section >
 
             {/* Testimonials Section */}
-            <section className={styles.testimonialsSection}>
+            < section className={styles.testimonialsSection} >
                 <div className={styles.sectionHeader}>
                     <h2>Trusted by innovative businesses</h2>
                     <p>See what our merchants are saying</p>
@@ -538,10 +547,10 @@ transaction/api.php?action=initialize', {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Contact Support Section */}
-            <AnimatedSection className={styles.contactSection} id="contact" animation="reveal" as="section">
+            < AnimatedSection className={styles.contactSection} id="contact" animation="reveal" as="section" >
                 <div className={styles.contactContainer}>
                     <div className={styles.contactContent}>
                         <div className={styles.contactBadge}>
@@ -587,16 +596,25 @@ transaction/api.php?action=initialize', {
                         <div className={styles.contactGlow}></div>
                     </div>
                 </div>
-            </AnimatedSection>
+            </AnimatedSection >
+
+            {/* FAQ Section */}
+            < section className={styles.faqSection} id="faq" >
+                <div className={styles.sectionHeader}>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Everything you need to know about getting started with Payrant.</p>
+                </div>
+                <FAQAccordion items={FAQ_ITEMS} />
+            </section >
 
             {/* CTA Section */}
-            <section className={styles.ctaSection}>
+            < section className={styles.ctaSection} >
                 <div className={styles.ctaContent}>
                     <h2>Ready to scale your business?</h2>
                     <p>Join thousands of businesses accepting payments with Payrant today.</p>
                     <Link to="/dashboard" className={styles.ctaBigBtn}>Create Free Account</Link>
                 </div>
-            </section>
+            </section >
 
             <Footer />
         </div >

@@ -1,98 +1,105 @@
 import { Link } from 'react-router-dom';
-import { ShoppingBag, CreditCard, BarChart2, Globe, Store, Smartphone } from 'lucide-react';
+import { Wifi, Battery, Printer, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import MeshBackground from '../components/MeshBackground';
 import styles from './Commerce.module.css';
 
 const Commerce = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles.commerceContainer}>
+            <SEO
+                title="Features - Payrant Virtual Account Payment Gateway | Advanced Payment Solutions"
+                description="Discover Payrant's comprehensive features including bank-level security, multiple bank options, instant notifications, advanced analytics, and developer-friendly APIs for seamless payment processing."
+                keywords="payment gateway features, virtual account features, bank payments, payment security, payment analytics, API integration, webhook notifications, payment processing features"
+                url="https://payrant.com/pos"
+            />
             <Navbar />
 
             {/* Hero Section */}
             <header className={styles.heroSection}>
-                <div className={styles.heroContent}>
-                    <h1>Unified commerce for <span className={styles.gradientText}>modern scalable businesses.</span></h1>
-                    <p>Accept payments in-store and online with one unified platform. Manage inventory, sales, and customer data in real-time.</p>
-                    <div className={styles.heroButtons}>
-                        <Link to="/dashboard" className={styles.primaryBtn}>
-                            Start Selling
-                        </Link>
-                        <Link to="/sales" className={styles.secondaryBtn}>
-                            Contact Sales
-                        </Link>
+                <div className={styles.heroContainer}>
+                    <div className={styles.heroContent}>
+                        <div className={styles.badge}>New Arrival</div>
+                        <h1>Smart POS Terminals for <span className={styles.gradientText}>Modern Business.</span></h1>
+                        <p>Accept card payments, track sales, and print receipts with our rugged, all-day battery Android POS. Designed for speed and reliability.</p>
+                        <div className={styles.heroButtons}>
+                            <Link to="/dashboard" className={styles.primaryBtn}>
+                                Order Terminal <ArrowRight size={18} />
+                            </Link>
+                            <Link to="/contact" className={styles.secondaryBtn}>
+                                Contact Sales
+                            </Link>
+                        </div>
+                        <div className={styles.trustBadges}>
+                            <span><CheckCircle2 size={16} color="#10B981" /> Instant Settlement</span>
+                            <span><CheckCircle2 size={16} color="#10B981" /> 99.9% Uptime</span>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.heroVisual}>
-                    <img src="/assets/payrant_commerce_hero.png" alt="Payrant Commerce POS" className={styles.heroImg} />
-                    <div className={styles.glow}></div>
+                    <div className={styles.heroVisual}>
+                        <div className={styles.imageWrapper}>
+                            <img
+                                src="/assets/payrant_pos_terminal.png"
+                                alt="Payrant Smart POS Terminal"
+                                className={styles.heroImg}
+                            />
+                            <div className={styles.glowEffect}></div>
+                        </div>
+                    </div>
                 </div>
             </header>
 
             {/* Features Grid */}
             <section className={styles.featuresSection}>
                 <div className={styles.sectionHeader}>
-                    <h2>Everything you need to sell everywhere</h2>
-                    <p>From checkout to payout, we give you the tools to grow your revenue.</p>
+                    <h2>Built for heavy-duty performance</h2>
+                    <p>Hardware that keeps up with your busiest days.</p>
                 </div>
 
                 <div className={styles.featureGrid}>
                     <div className={styles.featureCard}>
-                        <div className={styles.iconWrapper} style={{ background: '#E0F2FE', color: '#0284C7' }}>
-                            <Store size={28} />
+                        <div className={styles.iconWrapper}>
+                            <Printer size={32} color="#755AE2" />
                         </div>
-                        <h3>In-Store POS</h3>
-                        <p>Turn any device into a powerful point of sale. Accept cards, transfers, and cash with ease.</p>
+                        <h3>High-Speed Printer</h3>
+                        <p>Built-in thermal printer. Issue receipts in less than 2 seconds. No ink required.</p>
                     </div>
 
                     <div className={styles.featureCard}>
-                        <div className={styles.iconWrapper} style={{ background: '#F0FDF4', color: '#16A34A' }}>
-                            <Globe size={28} />
+                        <div className={styles.iconWrapper}>
+                            <Wifi size={32} color="#755AE2" />
                         </div>
-                        <h3>Online Store</h3>
-                        <p>Launch a beautiful ecommerce store in minutes. No coding required, just list and sell.</p>
+                        <h3>4G + WiFi</h3>
+                        <p>Stay connected anywhere. Automatically switches between WiFi and 4G LTE for uninterrupted sales.</p>
                     </div>
 
                     <div className={styles.featureCard}>
-                        <div className={styles.iconWrapper} style={{ background: '#FFF7ED', color: '#EA580C' }}>
-                            <Smartphone size={28} />
+                        <div className={styles.iconWrapper}>
+                            <Battery size={32} color="#755AE2" />
                         </div>
-                        <h3>Mobile Payments</h3>
-                        <p>Accept payments on the go with our mobile app. Perfect for pop-ups and deliveries.</p>
+                        <h3>All-Day Battery</h3>
+                        <p>Massive 5200mAh battery keeps your terminal running for up to 24 hours on a single charge.</p>
                     </div>
 
                     <div className={styles.featureCard}>
-                        <div className={styles.iconWrapper} style={{ background: '#EEF2FF', color: '#4F46E5' }}>
-                            <BarChart2 size={28} />
+                        <div className={styles.iconWrapper}>
+                            <Zap size={32} color="#755AE2" />
                         </div>
-                        <h3>Smart Analytics</h3>
-                        <p>Track sales, inventory, and customer behavior across all channels in one dashboard.</p>
+                        <h3>Instant Settlement</h3>
+                        <p>Funds are settled to your Payrant wallet instantly. Access your money when you need it.</p>
                     </div>
                 </div>
             </section>
 
-            {/* Tools Section */}
-            <section className={styles.toolsSection}>
-                <div className={styles.toolsContent}>
-                    <div className={styles.toolsText}>
-                        <h2>Powerful tools for payment management</h2>
-                        <ul className={styles.toolsList}>
-                            <li>
-                                <div className={styles.checkIcon}><ShoppingBag size={20} /></div>
-                                <div>
-                                    <h4>Inventory Management</h4>
-                                    <p>Sync stock across online and offline channels automatically.</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className={styles.checkIcon}><CreditCard size={20} /></div>
-                                <div>
-                                    <h4>Flexible Payment Options</h4>
-                                    <p>Offer Split Payments, Buy Now Pay Later, and Recurring Billing.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+            {/* Tech Specs / CTA */}
+            <section className={styles.ctaSection}>
+                <div className={styles.ctaContent}>
+                    <h2>Ready to upgrade your checkout?</h2>
+                    <p>Get the Payrant Smart POS today and start accepting payments like a pro.</p>
+                    <Link to="/dashboard" className={styles.ctaButtonLarge}>
+                        Order Now
+                    </Link>
                 </div>
             </section>
 

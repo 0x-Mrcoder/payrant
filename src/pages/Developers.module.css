@@ -1,6 +1,31 @@
-.container {
+.developers {
+    width: 100%;
     min-height: 100vh;
     background: white;
+    padding-top: 100px;
+}
+
+.container {
+    padding: 0 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Typography & Common */
+.subtitle {
+    font-size: 1.25rem;
+    color: #6B7280;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
 }
 
 /* Hero Section */
@@ -49,6 +74,9 @@
     text-decoration: none;
     transition: all 0.2s;
     font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .primaryBtn:hover {
@@ -66,6 +94,9 @@
     transition: all 0.2s;
     border: 1px solid #E5E7EB;
     font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .secondaryBtn:hover {
@@ -168,62 +199,718 @@
     font-family: 'Fira Code', monospace;
 }
 
-/* Features Section */
-.featuresSection {
-    padding: 80px 60px;
-    background: #F9FAFB;
-    border-top: 1px solid #E5E7EB;
-}
-
-.featureGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.featureCard {
+/* Quick Start */
+.quickStart {
+    padding: 80px 0;
     background: white;
-    padding: 32px;
-    border-radius: 16px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.step {
+    position: relative;
+    padding: 30px;
+    border-radius: 20px;
+    background: white;
     border: 1px solid #E5E7EB;
     transition: all 0.3s ease;
 }
 
-.featureCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+.step:hover {
     border-color: #755AE2;
+    box-shadow: 0 10px 30px -10px rgba(117, 90, 226, 0.1);
+    transform: translateY(-5px);
 }
 
-.featureIcon {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    background: #F3E8FF;
-    width: 60px;
-    height: 60px;
+.stepNumber {
+    width: 40px;
+    height: 40px;
+    background: #F5F3FF;
+    color: #755AE2;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
 }
 
-.featureCard h3 {
+.step h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.step p {
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.codeBlock {
+    background: #111827;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.codeBlock code {
+    color: #E5E7EB;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+}
+
+.installCommands {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.command {
+    background: #F9FAFB;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid #E5E7EB;
+}
+
+.lang {
+    font-size: 0.75rem;
+    color: #6B7280;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.command code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: #111827;
+}
+
+.linkBtn {
+    color: #755AE2;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.linkBtn:hover {
+    text-decoration: underline;
+}
+
+/* Code Examples */
+.codeExamples {
+    padding: 100px 0;
+    background: #111827;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.codeExamples::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(117, 90, 226, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.codeExamples h2 {
+    color: white;
+    text-align: center;
+}
+
+.codeExamples .subtitle {
+    color: #9CA3AF;
+    text-align: center;
+    margin: 0 auto 60px;
+}
+
+.editorContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.editorWindow {
+    background: #1E1E1E;
+    /* VS Code Main Background */
+    border-radius: 12px;
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    overflow: hidden;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    transition: transform 0.3s ease;
+}
+
+.editorWindow:hover {
+    transform: translateY(-5px);
+    border-color: #4B5563;
+}
+
+.editorHeader {
+    background: #252526;
+    /* VS Code Title Bar */
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #191919;
+}
+
+.windowDots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.editorTabs {
+    display: flex;
+    gap: 2px;
+    background: #252526;
+}
+
+.editorTab {
+    background: transparent;
+    border: none;
+    color: #969696;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.editorTab:hover {
+    background: #2D2D2D;
+    color: #E0E0E0;
+}
+
+.editorTab.activeTab {
+    background: #1E1E1E;
+    color: white;
+    border-top: 1px solid #755AE2;
+}
+
+.tabIcon {
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background: #333;
+    color: #CCC;
+}
+
+.activeTab .tabIcon {
+    background: #755AE2;
+    color: white;
+}
+
+.editorBody {
+    display: flex;
+    background: #1E1E1E;
+    min-height: 400px;
+    position: relative;
+}
+
+.editorSidebar {
+    width: 50px;
+    background: #1E1E1E;
+    border-right: 1px solid #2B2B2B;
+    padding-top: 20px;
+    text-align: right;
+    padding-right: 12px;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.lineNumber {
+    color: #555;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.codeArea {
+    padding: 20px;
+    flex: 1;
+    overflow-x: auto;
+    position: relative;
+}
+
+.codeArea pre {
+    margin: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #D4D4D4;
+    /* VS Code Default Text */
+}
+
+/* Syntax Highlighting */
+.keyword {
+    color: #C586C0;
+}
+
+/* Purple for keywords */
+.control {
+    color: #C586C0;
+}
+
+/* Purple for control flow */
+.string {
+    color: #CE9178;
+}
+
+/* Orange for strings */
+.function {
+    color: #DCDCAA;
+}
+
+/* Yellow for functions */
+.variable {
+    color: #9CDCFE;
+}
+
+/* Blue for variables */
+.comment {
+    color: #6A9955;
+    font-style: italic;
+}
+
+/* Green for comments */
+.number {
+    color: #B5CEA8;
+}
+
+/* Light Green for numbers */
+.operator {
+    color: #D4D4D4;
+}
+
+/* Default for operators */
+.class {
+    color: #4EC9B0;
+}
+
+/* Teal for class names */
+.constant {
+    color: #4FC1FF;
+}
+
+/* Light Blue for constants */
+
+
+.copyButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #E5E7EB;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    transition: all 0.2s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.editorWindow:hover .copyButton {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.copyButton:hover {
+    background: #755AE2;
+    border-color: #755AE2;
+    color: white;
+}
+
+/* API Reference */
+.apiReference {
+    padding: 100px 0;
+    background: white;
+}
+
+.apiGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.apiCard {
+    padding: 32px;
+    border-radius: 24px;
+    background: white;
+    border: 1px solid #E5E7EB;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.apiCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+    border-color: #755AE2;
+}
+
+.apiIcon {
+    width: 56px;
+    height: 56px;
+    background: #F5F3FF;
+    color: #755AE2;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: all 0.3s;
+}
+
+.apiCard:hover .apiIcon {
+    background: #755AE2;
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.apiCard h3 {
     font-size: 1.25rem;
     font-weight: 700;
     color: #111827;
     margin-bottom: 12px;
 }
 
-.featureCard p {
+.apiCard p {
     color: #4B5563;
     line-height: 1.6;
-    font-size: 1rem;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+.endpoints {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #F9FAFB;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.endpoints li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.method {
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background: #E5E7EB;
+    color: #4B5563;
+    text-transform: uppercase;
+}
+
+.learnMore {
+    color: #755AE2;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.learnMore:hover {
+    gap: 10px;
+}
+
+/* Webhooks */
+.webhooks {
+    padding: 100px 0;
+    background: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+}
+
+.webhookInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.webhookCard {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.eventList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.event {
+    padding: 16px;
+    background: #F9FAFB;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.event:hover {
+    border-color: #E5E7EB;
+    background: white;
+    transform: translateX(5px);
+}
+
+.event code {
+    background: #E5E7EB;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: #111827;
+    font-weight: 600;
+}
+
+.event p {
+    margin: 0;
+    color: #4B5563;
+    font-size: 0.95rem;
+}
+
+.securitySteps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+    position: relative;
+}
+
+.securitySteps::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 10px;
+    bottom: 30px;
+    width: 2px;
+    background: #E5E7EB;
+}
+
+.securityStep {
+    position: relative;
+    padding-left: 40px;
+}
+
+.securityStep::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: #F5F3FF;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #E5E7EB;
+    z-index: 1;
+}
+
+.securityStep:nth-child(1)::before {
+    box-shadow: 0 0 0 2px #755AE2;
+    background: #755AE2;
+}
+
+.securityStep:nth-child(2)::before {
+    animation-delay: 0.2s;
+}
+
+.securityStep strong {
+    display: block;
+    color: #111827;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+
+.securityStep p {
+    margin: 0;
+    color: #4B5563;
+    font-size: 0.95rem;
+}
+
+/* SDKs */
+.sdks {
+    padding: 100px 0;
+    background: white;
+    border-top: 1px solid #E5E7EB;
+}
+
+.sdkGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.sdkCard {
+    display: block;
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #E5E7EB;
+    text-decoration: none;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.sdkCard:hover {
+    border-color: #755AE2;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(117, 90, 226, 0.15);
+}
+
+.sdkCard h3 {
+    font-size: 1.1rem;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.sdkCard p {
+    color: #4B5563;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.version {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #F3F4F6;
+    color: #4B5563;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.sdkCard:hover .version {
+    background: #755AE2;
+    color: white;
+}
+
+/* Support CTA */
+.supportCta {
+    padding: 100px 0;
+    background: #111827;
+    text-align: center;
+    color: white;
+}
+
+.supportCta h2 {
+    color: white;
+    margin-bottom: 16px;
+}
+
+.supportCta p {
+    font-size: 1.25rem;
+    color: #9CA3AF;
+    margin-bottom: 40px;
+}
+
+.ctaActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ctaActions .secondaryBtn {
+    background: transparent;
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ctaActions .secondaryBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
-    .featuresSection {
-        padding: 60px 24px;
+    .container {
+        padding: 0 24px;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .heroContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .steps,
+    .apiGrid,
+    .sandboxGrid,
+    .webhookInfo,
+    .sdkGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .ctaActions {
+        flex-direction: column;
+    }
+
+    .heroActions {
+        flex-direction: column;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        justify-content: center;
+        width: 100%;
     }
 }

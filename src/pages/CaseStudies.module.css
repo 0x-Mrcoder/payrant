@@ -1,0 +1,503 @@
+.caseStudies {
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #755AE2 0%, #9F7AEA 100%);
+    color: white;
+    padding: 120px 60px 80px;
+    text-align: center;
+}
+
+.heroContent h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.heroContent p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Featured Case Study */
+.featured {
+    padding: 80px 60px;
+    background: #F9FAFB;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featuredCard {
+    background: white;
+    border-radius: 20px;
+    padding: 60px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid #E5E7EB;
+}
+
+.badge {
+    display: inline-block;
+    background: #F3E8FF;
+    color: #755AE2;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.companyLogo {
+    font-size: 4rem;
+    margin-bottom: 16px;
+}
+
+.featuredContent h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.industry {
+    color: #6B7280;
+    font-size: 1.125rem;
+    margin-bottom: 40px;
+}
+
+.featuredMetrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+    padding: 40px 0;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.metric {
+    text-align: center;
+}
+
+.metricValue {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #755AE2;
+    margin-bottom: 8px;
+}
+
+.metricLabel {
+    color: #6B7280;
+    font-size: 1rem;
+}
+
+.quote {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #374151;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.quote footer {
+    margin-top: 24px;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.quote strong {
+    color: #111827;
+    font-size: 1.125rem;
+}
+
+.quote span {
+    color: #6B7280;
+    font-size: 1rem;
+}
+
+/* Filter Section */
+.filterSection {
+    padding: 60px 60px 40px;
+    background: white;
+}
+
+.filterSection h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 32px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filters button {
+    padding: 10px 24px;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    color: #4B5563;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filters button:hover {
+    border-color: #755AE2;
+    color: #755AE2;
+}
+
+.filters button.active {
+    background: #755AE2;
+    color: white;
+    border-color: #755AE2;
+}
+
+/* Studies Grid */
+.studiesGrid {
+    padding: 40px 60px 80px;
+    background: white;
+}
+
+.studyCard {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.studyCard:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.cardHeader {
+    padding: 32px;
+    background: #F9FAFB;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.companyInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #E5E7EB;
+}
+
+.companyInfo h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.industryTag {
+    display: inline-block;
+    background: #F3E8FF;
+    color: #755AE2;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.cardBody {
+    padding: 32px;
+}
+
+.section {
+    margin-bottom: 32px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.section p {
+    color: #4B5563;
+    line-height: 1.6;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.resultItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: #F9FAFB;
+    border-radius: 8px;
+}
+
+.resultItem svg {
+    color: #10B981;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.resultItem strong {
+    display: block;
+    color: #111827;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.resultItem span {
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+.testimonialCard {
+    background: #F9FAFB;
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 4px solid #755AE2;
+}
+
+.testimonialCard p {
+    color: #374151;
+    font-style: italic;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.author strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.author span {
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+/* Stats Section */
+.stats {
+    padding: 80px 60px;
+    background: linear-gradient(135deg, #755AE2 0%, #9F7AEA 100%);
+    color: white;
+}
+
+.stats h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.statCard {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.statCard svg {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.statValue {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.statLabel {
+    font-size: 1.125rem;
+    opacity: 0.9;
+}
+
+/* CTA Section */
+.cta {
+    padding: 80px 60px;
+    background: #F9FAFB;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.cta p {
+    font-size: 1.25rem;
+    color: #6B7280;
+    margin-bottom: 40px;
+}
+
+.ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.primaryBtn {
+    background: #755AE2;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.primaryBtn:hover {
+    background: #6348C9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(117, 90, 226, 0.3);
+}
+
+.secondaryBtn {
+    background: white;
+    color: #111827;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #E5E7EB;
+    transition: all 0.2s;
+}
+
+.secondaryBtn:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .hero {
+        padding: 80px 24px 60px;
+    }
+
+    .heroContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .featured,
+    .filterSection,
+    .studiesGrid,
+    .stats,
+    .cta {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .featuredCard {
+        padding: 40px 32px;
+    }
+
+    .featuredMetrics {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .results {
+        grid-template-columns: 1fr;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .heroContent h1 {
+        font-size: 2rem;
+    }
+
+    .featuredContent h2 {
+        font-size: 2rem;
+    }
+
+    .quote {
+        font-size: 1.25rem;
+    }
+
+    .metricValue {
+        font-size: 2.5rem;
+    }
+
+    .stats h2,
+    .cta h2 {
+        font-size: 2rem;
+    }
+
+    .statValue {
+        font-size: 2.5rem;
+    }
+}

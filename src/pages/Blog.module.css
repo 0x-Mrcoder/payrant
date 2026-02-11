@@ -1,0 +1,339 @@
+/* Blog Page CSS */
+.blogContainer {
+    background: #FAFAFF;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 80px;
+    /* Navbar space */
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    padding: 100px 20px 60px;
+    text-align: center;
+    overflow: hidden;
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F3E8FF;
+    color: #755AE2;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    background: #755AE2;
+    border-radius: 50%;
+}
+
+.headline {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.subheadline {
+    font-size: 1.2rem;
+    color: #6B7280;
+    line-height: 1.6;
+}
+
+/* Categories */
+.categoriesWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.categoryBtn {
+    padding: 10px 24px;
+    border-radius: 99px;
+    border: 1px solid #E5E7EB;
+    background: white;
+    color: #6B7280;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.categoryBtn:hover,
+.activeCategory {
+    background: #755AE2;
+    color: white;
+    border-color: #755AE2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(117, 90, 226, 0.2);
+}
+
+/* Featured Post */
+.featuredSection {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.featuredCard {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.featuredCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.featuredImage {
+    height: 100%;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.featuredContent {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postMeta {
+    display: flex;
+    gap: 16px;
+    color: #9CA3AF;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.postTag {
+    color: #755AE2;
+    font-weight: 600;
+}
+
+.featuredTitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.featuredExcerpt {
+    color: #6B7280;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.readMore {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #755AE2;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Post Grid */
+.postsGrid {
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.postCard {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.postCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.cardImage {
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+}
+
+.cardContent {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.cardExcerpt {
+    color: #6B7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+/* Newsletter */
+.newsletterSection {
+    background: #111827;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletterContent {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletterContent h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.newsletterContent p {
+    color: #9CA3AF;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.newsletterForm {
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 99px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletterInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px 24px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+}
+
+.newsletterInput::placeholder {
+    color: #6B7280;
+}
+
+.newsletterBtn {
+    background: #755AE2;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 99px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.newsletterBtn:hover {
+    background: #6D28D9;
+}
+
+@media (max-width: 960px) {
+    .featuredCard {
+        grid-template-columns: 1fr;
+    }
+
+    .featuredImage {
+        min-height: 300px;
+    }
+
+    .featuredContent {
+        padding: 30px;
+    }
+
+    .postsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .postsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .newsletterForm {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+        padding: 0;
+        gap: 16px;
+    }
+
+    .newsletterInput {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .newsletterBtn {
+        width: 100%;
+        border-radius: 12px;
+    }
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /* Brand Colors - Raven / Payrant Premium */
@@ -41,7 +41,7 @@
 }
 
 body {
-  font-family: 'Montserrat', system-ui, sans-serif !important;
+  font-family: 'Poppins', system-ui, sans-serif !important;
   background-color: var(--color-bg-page);
   color: var(--color-text-main);
   min-height: 100vh;
@@ -56,7 +56,7 @@ h5,
 h6,
 .stat-value,
 .chart-value-big {
-  font-family: 'Montserrat', system-ui, sans-serif !important;
+  font-family: 'Poppins', system-ui, sans-serif !important;
   letter-spacing: -0.02em;
   /* Tighter for premium feel */
 }
@@ -65,7 +65,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Montserrat', system-ui, sans-serif !important;
+  font-family: 'Poppins', system-ui, sans-serif !important;
 }
 
 /* Utilities */

@@ -1,0 +1,197 @@
+/* Extracted from LandingPage.module.css */
+.codeBlock {
+    flex: 1;
+    background: #1E1E2E;
+    /* IDE Dark BG */
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    font-family: 'Fira Code', monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.codeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+}
+
+.actionsGroup {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.controlsGroup {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.windowControls {
+    display: flex;
+    gap: 6px;
+}
+
+.windowControls span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FF5F56;
+}
+
+.windowControls span:nth-child(2) {
+    background: #FFBD2E;
+}
+
+.windowControls span:nth-child(3) {
+    background: #27C93F;
+}
+
+.languageTabs {
+    display: flex;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.langTab {
+    background: transparent;
+    border: none;
+    color: #A6ACCD;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.langTab:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.activeTab {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-weight: 500;
+}
+
+.codeContent {
+    color: #A6ACCD;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+}
+
+/* New Copy Button Styles */
+.copyBtn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #A6ACCD;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copyBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.copyBtn.copied {
+    background: #10B981;
+    border-color: #10B981;
+    color: white;
+}
+
+
+/* Light Mode */
+.lightMode {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.lightMode .codeHeader {
+    border-bottom-color: #F3F4F6;
+}
+
+.lightMode .windowControls span {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lightMode .languageTabs {
+    background: #F3F4F6;
+}
+
+.lightMode .langTab {
+    color: #6B7280;
+}
+
+.lightMode .langTab:hover {
+    background: #E5E7EB;
+    color: #111827;
+}
+
+.lightMode .activeTab {
+    background: white;
+    color: #755AE2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.lightMode .codeContent {
+    color: #374151;
+}
+
+.lightMode .copyBtn {
+    background: #F3F4F6;
+    border-color: #E5E7EB;
+    color: #6B7280;
+}
+
+.lightMode .copyBtn:hover {
+    background: #E5E7EB;
+    color: #111827;
+}
+
+.toggleBtn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    border: none;
+    color: #A6ACCD;
+}
+
+.toggleBtn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lightMode .toggleBtn {
+    color: #6B7280;
+}
+
+.lightMode .toggleBtn:hover {
+    color: #111827;
+    background: #F3F4F6;
+}
