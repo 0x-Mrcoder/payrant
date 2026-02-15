@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, ArrowLeft } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 import styles from './Legal.module.css';
 
 const TermsOfService = () => {
@@ -156,7 +156,7 @@ const TermsOfService = () => {
                             </p>
                             <p>
                                 Email: <a href="mailto:legal@payrant.com">legal@payrant.com</a><br />
-                                Address: 123 Herbert Macaulay Way, Yaba, Lagos, Nigeria
+                                Address: 167 VI, Lagos, Nigeria
                             </p>
                         </section>
                     </div>

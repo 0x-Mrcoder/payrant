@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Clock, Tag, Mail } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
-import MeshBackground from '../components/MeshBackground';
-import AnimatedSection from '../components/AnimatedSection';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
+import MeshBackground from '../../components/MeshBackground';
+import AnimatedSection from '../../components/AnimatedSection';
 import styles from './Blog.module.css';
 
 const CATEGORIES = ['All', 'Product Updates', 'Engineering', 'Company', 'Customer Stories'];
 
-import { POSTS, FEATURED_POST } from '../data/blogPosts';
+import { POSTS, FEATURED_POST } from '../../data/blogPosts';
 
 const Blog = () => {
     const [activeCategory, setActiveCategory] = useState('All');

@@ -1,23 +1,24 @@
 /* Extracted from LandingPage.module.css */
 .codeBlock {
     flex: 1;
-    background: #1E1E2E;
-    /* IDE Dark BG */
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    font-family: 'Fira Code', monospace;
+    background: #0F172A;
+    /* Deep VS Code Dark */
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .codeHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 12px;
+    padding: 16px 24px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .actionsGroup {
@@ -83,13 +84,24 @@
     font-weight: 500;
 }
 
+.codeWrapper {
+    padding: 24px;
+    text-align: left !important;
+    overflow-x: auto;
+}
+
+.codeTag {
+    text-align: left !important;
+    display: block;
+}
+
 .codeContent {
     color: #A6ACCD;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    overflow-x: auto;
+    font-size: 0.95rem;
+    line-height: 1.7;
     margin: 0;
-    font-family: 'Fira Code', monospace;
+    font-family: inherit;
+    text-align: left !important;
 }
 
 /* New Copy Button Styles */
@@ -194,4 +206,49 @@
 .lightMode .toggleBtn:hover {
     color: #111827;
     background: #F3F4F6;
+}
+
+@media (max-width: 768px) {
+    .codeBlock {
+        padding: 24px 16px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .codeHeader {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+
+    .controlsGroup {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .windowControls {
+        display: none;
+    }
+
+    .actionsGroup {
+        width: 100%;
+        justify-content: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 16px;
+    }
+
+    .langTab {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .codeContent {
+        font-size: 0.75rem;
+        padding-left: 0;
+    }
 }

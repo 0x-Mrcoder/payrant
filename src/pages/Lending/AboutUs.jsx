@@ -1,8 +1,8 @@
+
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
-import MeshBackground from '../components/MeshBackground';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 import { Shield, Users, Globe, TrendingUp, Award, Heart } from 'lucide-react';
 import styles from './AboutUs.module.css';
 
@@ -26,7 +26,7 @@ const AboutUs = () => {
                         </div>
                         <h1 className={styles.headline}>
                             Building the Future of<br />
-                            <span className={styles.gradientText}>African Payments</span>
+                            <span className={styles.gradientText}> African Payments</span>
                         </h1>
                         <p className={styles.subheadline}>
                             We're on a mission to make payments seamless for every business in Africa. Our virtual account solution empowers merchants to accept payments effortlessly.
@@ -205,7 +205,7 @@ const AboutUs = () => {
             <section className={styles.ctaSection}>
                 <h2>Ready to get started?</h2>
                 <p>Join thousands of businesses already using Payrant</p>
-                <Link to="/dashboard" className={styles.ctaButton}>Create Free Account</Link>
+                <a href="https://app.payrant.com/auth-register.php" className={styles.ctaButton}>Create Free Account</a>
             </section>
 
             <Footer />

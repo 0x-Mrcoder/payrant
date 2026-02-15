@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
-import MeshBackground from '../components/MeshBackground';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
+import MeshBackground from '../../components/MeshBackground';
 import styles from './Pricing.module.css';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -53,7 +53,7 @@ const Pricing = () => {
                             <li><CheckCircle2 size={16} /> Automatic reconciliation</li>
                             <li><CheckCircle2 size={16} /> Multiple bank options</li>
                         </ul>
-                        <Link to="/dashboard" className={styles.pricingBtn}>Get Started</Link>
+                        <a href="https://app.payrant.com/auth-login.php" className={styles.pricingBtn}>Get Started</a>
                     </div>
 
                     <div className={`${styles.pricingCard} ${styles.popularCard}`}>
@@ -73,7 +73,7 @@ const Pricing = () => {
                             <li><CheckCircle2 size={16} /> Advanced analytics</li>
                             <li><CheckCircle2 size={16} /> API access</li>
                         </ul>
-                        <Link to="/dashboard" className={styles.pricingBtnPrimary}>Get Started</Link>
+                        <a href="https://app.payrant.com/auth-login.php" className={styles.pricingBtnPrimary}>Get Started</a>
                     </div>
 
                     <div className={styles.pricingCard}>
@@ -92,7 +92,7 @@ const Pricing = () => {
                             <li><CheckCircle2 size={16} /> Transfer tracking</li>
                             <li><CheckCircle2 size={16} /> Free account validation</li>
                         </ul>
-                        <Link to="/dashboard" className={styles.pricingBtn}>Get Started</Link>
+                        <a href="https://app.payrant.com/auth-login.php" className={styles.pricingBtn}>Get Started</a>
                     </div>
                 </div>
 

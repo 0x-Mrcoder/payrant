@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, Tag } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import MeshBackground from '../components/MeshBackground';
-import SEO from '../components/SEO';
-import { POSTS, FEATURED_POST } from '../data/blogPosts';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import MeshBackground from '../../components/MeshBackground';
+import SEO from '../../components/SEO';
+import { POSTS, FEATURED_POST } from '../../data/blogPosts';
 import styles from './BlogPost.module.css';
 
 const BlogPost = () => {

@@ -4,8 +4,8 @@ import {
     Book, FileText, Search, ChevronRight, ChevronDown,
     Code, Shield, Zap, CreditCard, Wallet, Bell, ArrowRight, Banknote, Menu, X
 } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import SEO from '../components/SEO';
+import Navbar from '../../components/Navbar';
+import SEO from '../../components/SEO';
 import styles from './Documentation.module.css';
 
 const SyntaxDisplay = ({ code }) => {

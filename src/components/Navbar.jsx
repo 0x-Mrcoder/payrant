@@ -7,6 +7,8 @@ const Navbar = ({ onProductChange, isDocs }) => {
     const [showProductDropdown, setShowProductDropdown] = useState(false);
     const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+    const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
 
@@ -49,14 +51,26 @@ const Navbar = ({ onProductChange, isDocs }) => {
                                 </button>
                                 {showProductDropdown && (
                                     <div className={styles.dropdownMenu}>
-                                        <div className={styles.dropdownItem} onClick={() => onProductChange && onProductChange('personal')}>
+                                        <div className={styles.dropdownItem} onClick={() => {
+                                            if (location.pathname !== '/') {
+                                                window.location.href = '/?product=personal';
+                                            } else {
+                                                onProductChange && onProductChange('personal');
+                                            }
+                                        }}>
                                             <div className={styles.iconBox}><Users size={20} color="#755AE2" /></div>
                                             <div>
                                                 <div className={styles.dropdownTitle}>Personal</div>
                                                 <div className={styles.dropdownDesc}>For individuals</div>
                                             </div>
                                         </div>
-                                        <div className={styles.dropdownItem} onClick={() => onProductChange && onProductChange('business')}>
+                                        <div className={styles.dropdownItem} onClick={() => {
+                                            if (location.pathname !== '/') {
+                                                window.location.href = '/?product=business';
+                                            } else {
+                                                onProductChange && onProductChange('business');
+                                            }
+                                        }}>
                                             <div className={styles.iconBox}><Briefcase size={20} color="#755AE2" /></div>
                                             <div>
                                                 <div className={styles.dropdownTitle}>Business</div>
@@ -120,8 +134,8 @@ const Navbar = ({ onProductChange, isDocs }) => {
                 </div>
 
                 <div className={styles.navActions}>
-                    <Link to="/login" className={styles.loginBtn}>Login</Link>
-                    <Link to="/signup" className={styles.ctaBtn}>Create Free Account</Link>
+                    <a href="https://app.payrant.com/auth-login.php" className={styles.loginBtn}>Login</a>
+                    <a href="https://app.payrant.com/auth-register.php" className={styles.ctaBtn}>Create Free Account</a>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -134,28 +148,99 @@ const Navbar = ({ onProductChange, isDocs }) => {
 
                 {/* Mobile Menu Overlay */}
                 <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
+                    <div className={styles.mobileMenuHeader}>
+                        <div className={styles.logo}>
+                            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                                <img src="/logo/logo.png" alt="Payrant" className={styles.logoImg} />
+                            </Link>
+                        </div>
+                        <button className={styles.closeBtn} onClick={() => setMobileMenuOpen(false)}>
+                            <X size={28} />
+                        </button>
+                    </div>
+
                     <div className={styles.mobileNavLinks}>
                         <div className={styles.mobileLinkGroup}>
-                            <div className={styles.mobileGroupTitle}>Products</div>
-                            <Link to="/personal" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Personal</Link>
-                            <Link to="/business" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Business</Link>
-                            <Link to="/pos" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>POS Terminals</Link>
+                            {/* Products Collapsible */}
+                            <div className={styles.mobileCollapsible}>
+                                <button
+                                    className={`${styles.mobileNavLink} ${mobileProductsOpen ? styles.mobileLinkActive : ''}`}
+                                    onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                                >
+                                    <span>Products</span>
+                                    <ChevronDown size={20} className={mobileProductsOpen ? styles.mobileArrowRotated : ''} />
+                                </button>
+                                <div className={`${styles.mobileSubMenu} ${mobileProductsOpen ? styles.mobileSubMenuOpen : ''}`}>
+                                    <div className={styles.mobileSubItem} onClick={() => {
+                                        if (location.pathname !== '/') {
+                                            window.location.href = '/?product=personal';
+                                        } else {
+                                            onProductChange && onProductChange('personal');
+                                            setMobileMenuOpen(false);
+                                        }
+                                    }}>
+                                        <Users size={18} color="#755AE2" />
+                                        <span>Personal</span>
+                                    </div>
+                                    <div className={styles.mobileSubItem} onClick={() => {
+                                        if (location.pathname !== '/') {
+                                            window.location.href = '/?product=business';
+                                        } else {
+                                            onProductChange && onProductChange('business');
+                                            setMobileMenuOpen(false);
+                                        }
+                                    }}>
+                                        <Briefcase size={18} color="#755AE2" />
+                                        <span>Business</span>
+                                    </div>
+                                    <Link to="/pos" className={styles.mobileSubItem} onClick={() => setMobileMenuOpen(false)}>
+                                        <CreditCard size={18} color="#755AE2" />
+                                        <span>POS Terminals</span>
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <Link to="/pricing" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>
+                                <span>Pricing</span>
+                            </Link>
+
+                            <Link to="/developers" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>
+                                <span>Developers</span>
+                            </Link>
+
+                            <Link to="/about" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>
+                                <span>About Us</span>
+                            </Link>
+
+                            {/* Resources Collapsible */}
+                            <div className={styles.mobileCollapsible}>
+                                <button
+                                    className={`${styles.mobileNavLink} ${mobileResourcesOpen ? styles.mobileLinkActive : ''}`}
+                                    onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                                >
+                                    <span>Resources</span>
+                                    <ChevronDown size={20} className={mobileResourcesOpen ? styles.mobileArrowRotated : ''} />
+                                </button>
+                                <div className={`${styles.mobileSubMenu} ${mobileResourcesOpen ? styles.mobileSubMenuOpen : ''}`}>
+                                    <Link to="/blog" className={styles.mobileSubItem} onClick={() => setMobileMenuOpen(false)}>
+                                        <BookOpen size={18} color="#755AE2" />
+                                        <span>Blog</span>
+                                    </Link>
+                                    <Link to="/documentation" className={styles.mobileSubItem} onClick={() => setMobileMenuOpen(false)}>
+                                        <FileText size={18} color="#755AE2" />
+                                        <span>API Documentation</span>
+                                    </Link>
+                                    <Link to="/support" className={styles.mobileSubItem} onClick={() => setMobileMenuOpen(false)}>
+                                        <HelpCircle size={18} color="#755AE2" />
+                                        <span>Support</span>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
 
-                        <Link to="/pricing" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
-                        <Link to="/developers" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Developers</Link>
-                        <Link to="/about" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-
-                        <div className={styles.mobileLinkGroup}>
-                            <div className={styles.mobileGroupTitle}>Resources</div>
-                            <Link to="/blog" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Blog</Link>
-                            <Link to="/documentation" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>API Docs</Link>
-                            <Link to="/support" className={styles.mobileNavLink} onClick={() => setMobileMenuOpen(false)}>Support</Link>
-                        </div>
-
-                        <div className={styles.mobileNavActions}>
-                            <Link to="/login" className={styles.mobileLoginBtn} onClick={() => setMobileMenuOpen(false)}>Login</Link>
-                            <Link to="/signup" className={styles.mobileCtaBtn} onClick={() => setMobileMenuOpen(false)}>Create Free Account</Link>
+                        <div className={styles.mobileMenuFooter}>
+                            <a href="https://app.payrant.com/auth-login.php" className={styles.mobileLoginBtn} onClick={() => setMobileMenuOpen(false)}>Login</a>
+                            <a href="https://app.payrant.com/auth-register.php" className={styles.mobileCtaBtn} onClick={() => setMobileMenuOpen(false)}>Create Free Account</a>
                         </div>
                     </div>
                 </div>

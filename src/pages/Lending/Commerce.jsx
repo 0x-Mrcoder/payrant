@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Wifi, Battery, Printer, Zap, CheckCircle2, ArrowRight } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
-import MeshBackground from '../components/MeshBackground';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
+import MeshBackground from '../../components/MeshBackground';
 import styles from './Commerce.module.css';
 
 const Commerce = () => {
@@ -25,9 +25,9 @@ const Commerce = () => {
                         <h1>Smart POS Terminals for <span className={styles.gradientText}>Modern Business.</span></h1>
                         <p>Accept card payments, track sales, and print receipts with our rugged, all-day battery Android POS. Designed for speed and reliability.</p>
                         <div className={styles.heroButtons}>
-                            <Link to="/dashboard" className={styles.primaryBtn}>
+                            <a href="https://app.payrant.com/auth-login.php" className={styles.primaryBtn}>
                                 Order Terminal <ArrowRight size={18} />
-                            </Link>
+                            </a>
                             <Link to="/contact" className={styles.secondaryBtn}>
                                 Contact Sales
                             </Link>
@@ -97,9 +97,9 @@ const Commerce = () => {
                 <div className={styles.ctaContent}>
                     <h2>Ready to upgrade your checkout?</h2>
                     <p>Get the Payrant Smart POS today and start accepting payments like a pro.</p>
-                    <Link to="/dashboard" className={styles.ctaButtonLarge}>
+                    <a href="https://app.payrant.com/auth-login.php" className={styles.ctaButtonLarge}>
                         Order Now
-                    </Link>
+                    </a>
                 </div>
             </section>
 

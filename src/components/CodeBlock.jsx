@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Copy, Check, Sun, Moon } from 'lucide-react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styles from './CodeBlock.module.css';
 
 const CodeBlock = () => {
@@ -23,7 +25,8 @@ const response = await fetch('https://api.payrant.com/v1/initialize', {
     callback_url: 'https://yoursite.com/callback'
   })
 });`,
-        php: `// Initialize Payment
+        php: `<?php
+// Initialize Payment
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -39,7 +42,8 @@ curl_setopt_array($curl, array(
   ])
 ));
 
-$response = curl_exec($curl);`
+$response = curl_exec($curl);
+?>`
     };
 
     const handleCopy = () => {
@@ -88,9 +92,25 @@ $response = curl_exec($curl);`
                     </button>
                 </div>
             </div>
-            <pre className={styles.codeContent}>
-                {CODE[activeTab]}
-            </pre>
+            <div className={styles.codeWrapper}>
+                <SyntaxHighlighter
+                    language={activeTab === 'js' ? 'javascript' : 'php'}
+                    style={theme === 'dark' ? atomDark : oneLight}
+                    customStyle={{
+                        background: 'transparent',
+                        padding: '0',
+                        margin: '0',
+                        fontSize: 'inherit',
+                        lineHeight: 'inherit',
+                        fontFamily: 'inherit',
+                    }}
+                    codeTagProps={{
+                        className: styles.codeTag
+                    }}
+                >
+                    {CODE[activeTab]}
+                </SyntaxHighlighter>
+            </div>
         </div>
     );
 };

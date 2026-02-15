@@ -609,10 +609,18 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .documentation {
+        height: auto;
+        overflow: visible;
+        padding-top: 100px;
+    }
+
     .docsLayout {
+        display: flex;
         flex-direction: column;
         height: auto;
         overflow: visible;
+        gap: 0;
     }
 
     .sidebar {

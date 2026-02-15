@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, ArrowLeft } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 import styles from './Legal.module.css';
 
 const PrivacyPolicy = () => {
@@ -215,7 +215,7 @@ const PrivacyPolicy = () => {
                             <p>
                                 <strong>Data Protection Officer</strong><br />
                                 Email: <a href="mailto:privacy@payrant.com">privacy@payrant.com</a><br />
-                                Address: 123 Herbert Macaulay Way, Yaba, Lagos, Nigeria
+                                Address: 167 VI, Lagos, Nigeria
                             </p>
                         </section>
                     </div>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Search, HelpCircle, CreditCard, Shield, User, Rocket, Mail, MessageSquare, Phone, ArrowRight } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
-import MeshBackground from '../components/MeshBackground';
-import AnimatedSection from '../components/AnimatedSection';
-import FAQAccordion from '../components/FAQAccordion';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
+import MeshBackground from '../../components/MeshBackground';
+import AnimatedSection from '../../components/AnimatedSection';
+import FAQAccordion from '../../components/FAQAccordion';
 import styles from './Support.module.css';
 
 const FAQ_ITEMS = [
@@ -38,9 +38,9 @@ const CONTACT_OPTIONS = [
     {
         icon: <Mail size={32} />,
         title: "Email Support",
-        desc: "Best for detailed inquiries. We usually reply within 2 hours.",
-        action: "support@payrant.com",
-        link: "mailto:support@payrant.com"
+        desc: "We'll respond within 24 hours.",
+        action: "hello@payrant.com",
+        link: "mailto:hello@payrant.com"
     },
     {
         icon: <MessageSquare size={32} />,
@@ -52,9 +52,9 @@ const CONTACT_OPTIONS = [
     {
         icon: <Phone size={32} />,
         title: "Phone Support",
-        desc: "Available Mon-Fri from 9am to 5pm WAT.",
-        action: "+234 800 PAYRANT",
-        link: "tel:+2348007297268"
+        desc: "Mon-Fri, 9AM-6PM WAT",
+        action: "+234-8100000654",
+        link: "tel:+2348100000654"
     }
 ];
 

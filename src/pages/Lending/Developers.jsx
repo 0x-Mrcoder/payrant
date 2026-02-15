@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Code, Book, Zap, Shield, Terminal, Copy, Check, ExternalLink, PlayCircle, ShieldCheck, Activity, BarChart3 } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 import styles from './Developers.module.css';
 
 const Developers = () => {

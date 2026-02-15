@@ -1,29 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Brand Colors - Raven / Payrant Premium */
+  /* Brand Colors - Raven-inspired */
   --color-primary-start: #917BE8;
-  /* Raven Light Purple */
   --color-primary-end: #755AE2;
-  /* Raven Deep Purple */
+  --color-primary-lavender: #E5E0FF;
+  --color-primary-soft: #F5F3FF;
 
-  --color-bg-page: #F9F9FF;
-  /* Ultra Soft Lavender/White */
-  --color-bg-card: #FFFFFF;
-  /* Pure White */
-
-  --color-text-main: #1A1A1A;
-  /* Deep Black */
-  --color-text-body: #666666;
-  /* Soft Gray */
-  --color-text-light: #F3F4F6;
-
-  /* Accents */
   --color-accent-success: #05C168;
-  /* Raven Green */
   --color-accent-blue: #1C55EC;
 
-  /* Shadows - Soft Neumorphism */
+  --color-bg-page: #FFFFFF;
+  --color-bg-section: #F9F9FF;
+  --color-bg-card: #FFFFFF;
+
+  --color-text-main: #111827;
+  --color-text-body: #4B5563;
+  --color-text-muted: #9CA3AF;
+
+  /* Shadows - Premium & Soft */
   --shadow-soft: 0 10px 40px -10px rgba(117, 90, 226, 0.08);
   --shadow-hover: 0 20px 50px -12px rgba(117, 90, 226, 0.15);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.03);
@@ -32,6 +27,7 @@
   --radius-lg: 24px;
   --radius-pill: 9999px;
   --radius-md: 16px;
+  --radius-sm: 8px;
 }
 
 * {
@@ -40,12 +36,16 @@
   padding: 0;
 }
 
+html,
 body {
-  font-family: 'Poppins', system-ui, sans-serif !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
   background-color: var(--color-bg-page);
   color: var(--color-text-main);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 h1,
@@ -54,18 +54,12 @@ h3,
 h4,
 h5,
 h6,
-.stat-value,
-.chart-value-big {
-  font-family: 'Poppins', system-ui, sans-serif !important;
-  letter-spacing: -0.02em;
-  /* Tighter for premium feel */
-}
-
 button,
 input,
 select,
 textarea {
-  font-family: 'Poppins', system-ui, sans-serif !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  letter-spacing: -0.01em;
 }
 
 /* Utilities */

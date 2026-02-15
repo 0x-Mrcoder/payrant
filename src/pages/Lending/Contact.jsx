@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Check } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 import styles from './Contact.module.css';
 
 const Contact = () => {
@@ -117,8 +117,8 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <h3>Email</h3>
-                                            <a href="mailto:support@payrant.com">support@payrant.com</a>
-                                            <a href="mailto:sales@payrant.com">sales@payrant.com</a>
+                                            <a href="mailto:hello@payrant.com">hello@payrant.com</a>
+                                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#6B7280' }}>We'll respond within 24 hours</p>
                                         </div>
                                     </div>
 
@@ -128,8 +128,8 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <h3>Phone</h3>
-                                            <a href="tel:+2348012345678">+234 801 234 5678</a>
-                                            <span>Mon-Fri 9am-6pm WAT</span>
+                                            <a href="tel:+2348100000654">+234-8100000654</a>
+                                            <span>Mon-Fri, 9AM-6PM WAT</span>
                                         </div>
                                     </div>
 
@@ -139,8 +139,8 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <h3>Office</h3>
-                                            <p>123 Herbert Macaulay Way</p>
-                                            <p>Yaba, Lagos, Nigeria</p>
+                                            <p>167 VI, Lagos, Nigeria</p>
+                                            <p style={{ fontSize: '0.85rem', opacity: 0.8 }}>Visit us by appointment</p>
                                         </div>
                                     </div>
                                 </div>
@@ -241,7 +241,7 @@ const Contact = () => {
                         <h2>Visit Our Office</h2>
                         <div className={styles.mapPlaceholder}>
                             <MapPin size={48} />
-                            <p>123 Herbert Macaulay Way, Yaba, Lagos, Nigeria</p>
+                            <p>167 VI, Lagos, Nigeria</p>
                         </div>
                     </div>
                 </section>

@@ -36,7 +36,7 @@ const Footer = () => {
                     <h4>Product</h4>
                     <ul>
                         <li><a href="/#features">Features</a></li>
-                        <li><a href="/#pricing">Pricing</a></li>
+                        <li><Link to="/pricing">Pricing</Link></li>
                         <li><Link to="/documentation">API Documentation</Link></li>
                         <li><a href="#">Integrations</a></li>
                         <li><a href="#">Changelog</a></li>

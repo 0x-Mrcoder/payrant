@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp, Users, DollarSign, ArrowRight } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 import styles from './CaseStudies.module.css';
 
 const CaseStudies = () => {
@@ -246,10 +246,10 @@ const CaseStudies = () => {
                         <h2>Ready to Transform Your Payments?</h2>
                         <p>Join thousands of businesses growing with Payrant</p>
                         <div className={styles.ctaButtons}>
-                            <Link to="/signup" className={styles.primaryBtn}>
+                            <a href="https://app.payrant.com/auth-register.php" className={styles.primaryBtn}>
                                 Get Started Free
                                 <ArrowRight size={20} />
-                            </Link>
+                            </a>
                             <Link to="/contact" className={styles.secondaryBtn}>
                                 Talk to Sales
                             </Link>
